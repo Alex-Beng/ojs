@@ -3,8 +3,22 @@
 #include <queue>
 #include <iostream>
 using namespace std;
+
+int main(int argc, char const *argv[])
+{
+	
+	return 0;
+}
+
+
+/* abandoned version
+#include <algorithm>
+#include <map>
+#include <queue>
+#include <iostream>
+using namespace std;
 int cube [23][33];
-int status[6]; // 通过六面的四个块给予权重代表该面..
+int status[6]; // 通过六面的四个块给予权重代表该面..然后对六面也给予权重代表整个面...
 
 void input() {
 	int base_x;
@@ -13,11 +27,6 @@ void input() {
 	base_x = 2;
 	base_y = 0;
 	for (int i=0; i<2; i++) {
-		/*
-		for (int j=0; j<2; j++) {
-			cin>>cube[base_y+i][base_x+j];
-		}
-		*/
 		int t;
 		cin>>t;
 		status[0] += t;
@@ -42,11 +51,6 @@ void input() {
 	base_x = 2;
 	base_y = 5;
 	for (int i=0; i<2; i++) {
-		/*
-		for (int j=0; j<2; j++) {
-			cin>>cube[base_y-i][base_x-j];
-		}
-		*/
 		int t;
 		cin>>t;
 		status[1] += t;
@@ -71,10 +75,6 @@ void input() {
 	base_x = 0;
 	base_y = 2;
 	for (int i=0; i<2; i++) {
-			/*
-		for (int j=0; j<2; j++) {
-			cin>>cube[base_y+i][base_x+j];
-		}*/
 		int t;
 		cin>>t;
 		status[2] += t;
@@ -99,11 +99,6 @@ void input() {
 	base_x = 5;
 	base_y = 2;
 	for (int i=0; i<2; i++) {
-		/*
-		for (int j=0; j<2; j++) {
-			cin>>cube[base_y-i][base_x-j];
-		}
-		*/
 		int t;
 		cin>>t;
 		status[3] += t;
@@ -128,10 +123,6 @@ void input() {
 	base_x = 2;
 	base_y = 2;
 	for (int i=0; i<2; i++) {
-			/*
-		for (int j=0; j<2; j++) {
-			cin>>cube[base_y+i][base_x+j];
-		}*/
 		int t;
 		cin>>t;
 		status[4] += t;
@@ -156,10 +147,6 @@ void input() {
 	base_x = 7;
 	base_y = 2;
 	for (int i=0; i<2; i++) {
-		/*
-		for (int j=0; j<2; j++) {
-			cin>>cube[base_y-i][base_x-j];
-		}*/
 		int t;
 		cin>>t;
 		status[5] += t;
@@ -228,7 +215,7 @@ int get_status() {
 	status[4] = 0;
 	for (int i=0; i<2; i++) {
 		for (int j=0; j<2; j++) {
-			status[4] += cube[base_row+i][base_col+j];
+			status[4] = status[4]*2 + cube[base_row+i][base_col+j];
 		}
 	}
 
@@ -237,7 +224,7 @@ int get_status() {
 	status[5] = 0;
 	for (int i=0; i<2; i++) {
 		for (int j=0; j<2; j++) {
-			status[5] += cube[base_row+i][base_col+j];
+			status[5] = status[5]*2 + cube[base_row+i][base_col+j];
 		}
 	}
 }
@@ -334,12 +321,12 @@ int main() {
 	input();
 	//move_to(0);move_to(1);
 
-	for (int i=0; i<6; i++) {
-		for (int j=0; j<8; j++) {
-			cout<<cube[i][j];
-		}
-		cout<<endl;
-	}
+	// for (int i=0; i<6; i++) {
+	// 	for (int j=0; j<8; j++) {
+	// 		cout<<cube[i][j];
+	// 	}
+	// 	cout<<endl;
+	// }
 
 	if (*min_element(status,status+6) == 0) {
 		cout<<0<<endl;
@@ -348,7 +335,7 @@ int main() {
 
 	int begin_status = 0;
 	for (int i=0; i<6; i++) {
-		begin_status = begin_status*10 + status[i];
+		begin_status = begin_status*2 + status[i];
 	}
 	queue<int> qrq;
 	map<int, int> step;
@@ -360,8 +347,8 @@ int main() {
 		for (int i=0; i<6; i++) {
 			move_to(i);
 			get_status();
-			for (int i=0; i<6; i++) {
-				t_next = t_next*10 + status[i];
+			for (int j=0; j<6; j++) {
+				t_next = t_next*2 + status[i];
 			}
 			if (*min_element(status,status+6) == 0) { // 复原了？
 				cout<<step[t_status] + 1<<endl;
@@ -369,8 +356,12 @@ int main() {
 			if (step[t_next] == 0) {
 				step[t_next] = step[t_status] + 1;
 			}
+			for (int k=0; k<3; k++) {
+				move_to(i);
+			}
 		}
 	}
 
 	return 0;
 }
+*/
