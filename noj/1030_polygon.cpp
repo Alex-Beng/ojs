@@ -12,6 +12,6 @@ int main() {
 			ans += fabs(t_pos - floor(t_pos+0.5))/(n+m);
 		}
 		cout<<fixed<<setprecision(4)<<ans*10000<<endl;
-	}
+	} 
 	return 0;
 }
