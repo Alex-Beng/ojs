@@ -2,8 +2,8 @@
 #include <queue>
 
 using namespace std;
-int step[23][33][33][33];
-int vec[4][2] = {{1, 0}, {-1, 0}, {0, 1}, {0, -1}};
+int status_ever[23][33][33][33]; // 代表当前状态
+int vec[4][2] = {{1, 0}, {-1, 0}, {0, 1}, {0, -1}}; // 下, 上, 左, 右
 struct node {
     int person_cols;
     int person_rows;
@@ -51,6 +51,13 @@ int main(int argc, char const *argv[]) {
         }
     }
 
+    // for (int i=1; i<=10; i++) {         // row
+    //     for (int j=1; j<=10; j++) {
+    //         cout<<map[i][j];
+    //     }
+    //     cout<<endl;
+    // }
+
     std::queue<node> qrq;
     qrq.push(node(person_begin_cols,person_begin_rows,box_begin_cols,box_begin_rows));
     while (!qrq.empty()) {
@@ -65,22 +72,22 @@ int main(int argc, char const *argv[]) {
                 t_next.box_cols += vec[i][0];
                 t_next.box_rows += vec[i][1];
                 if (in_board(t_next.box_rows,t_next.box_cols)
-                && step[t_next.person_cols][t_next.person_rows][t_next.box_cols][t_next.box_rows] == 0
+                && status_ever[t_next.person_cols][t_next.person_rows][t_next.box_cols][t_next.box_rows] == 0
                 && map[t_next.box_rows][t_next.box_cols] == '0') {
-                    step[t_next.person_cols][t_next.person_rows][t_next.box_cols][t_next.box_rows] = step[t_node.person_cols][t_node.person_rows][t_node.box_cols][t_node.box_rows] + 1;
+                    status_ever[t_next.person_cols][t_next.person_rows][t_next.box_cols][t_next.box_rows] = status_ever[t_node.person_cols][t_node.person_rows][t_node.box_cols][t_node.box_rows] + 1;
                     qrq.push(t_next);
                 }
             }
             else {                                          //如果没推到箱子
                 if (in_board(t_next.person_rows,t_next.person_cols) 
-                && step[t_next.person_cols][t_next.person_rows][t_next.box_cols][t_next.box_rows] == 0
+                && status_ever[t_next.person_cols][t_next.person_rows][t_next.box_cols][t_next.box_rows] == 0
                 && map[t_next.person_rows][t_next.person_cols] == '0' ) {   
-                    step[t_next.person_cols][t_next.person_rows][t_next.box_cols][t_next.box_rows] = step[t_node.person_cols][t_node.person_rows][t_node.box_cols][t_node.box_rows] + 1;
+                    status_ever[t_next.person_cols][t_next.person_rows][t_next.box_cols][t_next.box_rows] = status_ever[t_node.person_cols][t_node.person_rows][t_node.box_cols][t_node.box_rows] + 1;
                     qrq.push(t_next);
                 }   
             }
             if (t_next.box_cols == box_end_cols && t_next.box_rows == box_end_rows) {
-                cout<<step[t_next.person_cols][t_next.person_rows][t_next.box_cols][t_next.box_rows]<<endl;
+                cout<<status_ever[t_next.person_cols][t_next.person_rows][t_next.box_cols][t_next.box_rows]<<endl;
                 return 0;
             }
         }
@@ -93,7 +100,7 @@ int main(int argc, char const *argv[]) {
 // #include <iostream>
 // using namespace std;
 // int vec[4][2] = {{1,0}, {-1,0}, {0,1}, {0,-1}};
-// int step[23][33][33][33]; // person_col, *_row; box_col, *_row;
+// int status_ever[23][33][33][33]; // person_col, *_row; box_col, *_row;
 // struct coordinate {
 //     int col_;
 //     int row_;
@@ -164,22 +171,22 @@ int main(int argc, char const *argv[]) {
 //                 t_box_next.row_ = t_next.person_site_.row_ + vec[i][0];
 //                 t_box_next.col_ = t_next.person_site_.col_ + vec[i][1];
 //                 if (in_board(t_box_next)
-//                 && step[t_next.person_site_.col_][t_next.person_site_.row_][t_box_next.col_][t_box_next.row_] == 0
+//                 && status_ever[t_next.person_site_.col_][t_next.person_site_.row_][t_box_next.col_][t_box_next.row_] == 0
 //                 && map[t_box_next.row_][t_box_next.col_].road_ == '0') {
 //                     t_next.box_site_ = t_box_next;
 //                     qrq.push(t_next);
-//                     step[t_next.person_site_.col_][t_next.person_site_.row_][t_next.box_site_.col_][t_next.box_site_.row_]
-//                     = step[t_status.person_site_.col_][t_status.person_site_.row_][t_status.box_site_.col_][t_status.box_site_.row_] + 1;
+//                     status_ever[t_next.person_site_.col_][t_next.person_site_.row_][t_next.box_site_.col_][t_next.box_site_.row_]
+//                     = status_ever[t_status.person_site_.col_][t_status.person_site_.row_][t_status.box_site_.col_][t_status.box_site_.row_] + 1;
 //                 }
 //             }
 //             else if (in_board(t_next.person_site_)
-//             && step[t_next.person_site_.col_][t_next.person_site_.row_][t_next.box_site_.col_][t_next.box_site_.row_] == 0) {
-//                 step[t_next.person_site_.col_][t_next.person_site_.row_][t_next.box_site_.col_][t_next.box_site_.row_]
-//                     = step[t_status.person_site_.col_][t_status.person_site_.row_][t_status.box_site_.col_][t_status.box_site_.row_] + 1;
+//             && status_ever[t_next.person_site_.col_][t_next.person_site_.row_][t_next.box_site_.col_][t_next.box_site_.row_] == 0) {
+//                 status_ever[t_next.person_site_.col_][t_next.person_site_.row_][t_next.box_site_.col_][t_next.box_site_.row_]
+//                     = status_ever[t_status.person_site_.col_][t_status.person_site_.row_][t_status.box_site_.col_][t_status.box_site_.row_] + 1;
 //                 qrq.push(t_next);
 //             }
 //             if (t_next.box_site_.col_ == box_end.col_ && t_next.box_site_.row_ == box_end.row_) {
-//                 cout<<step[t_next.person_site_.col_][t_next.person_site_.row_][t_next.box_site_.col_][t_next.box_site_.row_]<<endl;
+//                 cout<<status_ever[t_next.person_site_.col_][t_next.person_site_.row_][t_next.box_site_.col_][t_next.box_site_.row_]<<endl;
 //                 return 0;
 //             }
 //         }
