@@ -1,13 +1,239 @@
+/*
+sample
+00
+00
+11
+11
+11
+11
+11
+11
+11
+11
+11
+11
+output: 
+0
+*/
 #include <algorithm>
 #include <map>
 #include <queue>
 #include <iostream>
 using namespace std;
 
-int main(int argc, char const *argv[])
-{
+struct node {
+	node(int t=0) {
+		hash_num = t;
+	}
+	int surface[6][4]; // 按输入顺序 上下左右前后
+	int hash_num; // 把24个值都乘权重(2)然后加起来作为特征值..
+};
+
+
+node move_to(node t_status, int flag) {
+	int t;
+	int t2;
+	switch(flag) {
+	case 0: //R
+		t = t_status.surface[3][0];
+		t_status.surface[3][0] = t_status.surface[3][1];
+		t_status.surface[3][1] = t_status.surface[3][3];
+		t_status.surface[3][3] = t_status.surface[3][2];
+		t_status.surface[3][2] = t;
+
+		t  = t_status.surface[0][1];
+		t2 = t_status.surface[0][3];
+		t_status.surface[0][1] = t_status.surface[4][1];
+		t_status.surface[0][3] = t_status.surface[4][3];
+		t_status.surface[4][1] = t_status.surface[1][3];
+		t_status.surface[4][3] = t_status.surface[1][1];
+		t_status.surface[1][3] = t_status.surface[5][3];
+		t_status.surface[1][1] = t_status.surface[5][1];
+		t_status.surface[5][3] = t;
+		t_status.surface[5][1] = t2;
+		// t_status.surface[0][1] = t_status.surface[0][3];
+		// t_status.surface[0][3] = t_status.surface[4][1];
+		// t_status.surface[4][1] = t_status.surface[4][3];
+		// t_status.surface[4][3] = t_status.surface[1][3];
+		// t_status.surface[1][3] = t_status.surface[1][1];
+		// t_status.surface[1][1] = t_status.surface[5][3];
+		// t_status.surface[5][3] = t_status.surface[5][1];
+		// t_status.surface[5][1] = t;
+		return t_status;
+	case 1: // U
+		t = t_status.surface[0][0];
+		t_status.surface[0][0] = t_status.surface[0][2];
+		t_status.surface[0][2] = t_status.surface[0][3];
+		t_status.surface[0][3] = t_status.surface[0][1];
+		t_status.surface[0][1] = t;
+
+		t  = t_status.surface[2][0];
+		t2 = t_status.surface[2][1];
+		t_status.surface[2][0] = t_status.surface[4][0];
+		t_status.surface[2][1] = t_status.surface[4][1];
+		t_status.surface[4][0] = t_status.surface[3][1];
+		t_status.surface[4][1] = t_status.surface[3][0];
+		t_status.surface[3][1] = t_status.surface[5][1];
+		t_status.surface[3][0] = t_status.surface[5][0];
+		t_status.surface[5][1] = t;
+		t_status.surface[5][0] = t2;
+		// t_status.surface[2][0] = t_status.surface[2][1];
+		// t_status.surface[2][1] = t_status.surface[4][0];
+		// t_status.surface[4][0] = t_status.surface[4][1];
+		// t_status.surface[4][1] = t_status.surface[3][1];
+		// t_status.surface[3][1] = t_status.surface[3][0];
+		// t_status.surface[3][0] = t_status.surface[5][1];
+		// t_status.surface[5][1] = t_status.surface[5][0];
+		// t_status.surface[5][0] = t;
+		return t_status;
+	case 2: // F
+		t = t_status.surface[4][0];
+		t_status.surface[4][0] = t_status.surface[4][2];
+		t_status.surface[4][2] = t_status.surface[4][3];
+		t_status.surface[4][3] = t_status.surface[4][1];
+		t_status.surface[4][1] = t;
+
+		t  = t_status.surface[3][1];
+		t2 = t_status.surface[3][3];
+		t_status.surface[3][1] = t_status.surface[0][2];
+		t_status.surface[3][3] = t_status.surface[0][3];
+		t_status.surface[0][2] = t_status.surface[2][3];
+		t_status.surface[0][3] = t_status.surface[2][1];
+		t_status.surface[2][3] = t_status.surface[1][3];
+		t_status.surface[2][1] = t_status.surface[1][2];
+		t_status.surface[1][3] = t;
+		t_status.surface[1][2] = t2;
+
+		// t_status.surface[3][1] = t_status.surface[0][3];
+		// t_status.surface[0][3] = t_status.surface[0][2];
+		// t_status.surface[0][2] = t_status.surface[2][1];
+		// t_status.surface[2][1] = t_status.surface[2][3];
+		// t_status.surface[2][3] = t_status.surface[1][2];
+		// t_status.surface[1][2] = t_status.surface[1][3];
+		// t_status.surface[1][3] = t_status.surface[3][3];
+		// t_status.surface[3][3] = t;
+		return t_status;
+	case 3: // R'
+		return move_to(move_to(move_to(t_status,0),0),0);
+	case 4: // U'
+		return move_to(move_to(move_to(t_status,1),1),1);
+	case 5: // F'
+		return move_to(move_to(move_to(t_status,2),2),2);
+	}
+}
+
+void get_hash(node &t_status) {
+	t_status.hash_num = 0;
+	for (int i=0; i<6; i++) {
+		for (int j=0; j<4; j++) {
+			t_status.hash_num = t_status.hash_num*2 + t_status.surface[i][j];
+		}
+	}
+}
+
+bool is_solved(node t_status) {
+	int t_sum[6] = {0};
+	for (int i=0; i<6; i++) {
+		for (int j=0; j<4; j++) {
+			t_sum[i] += t_status.surface[i][j];
+		}
+	}
+	if (*min_element(t_sum,t_sum+6) == 0) {
+		return true;
+	}
+	else {
+		return false;
+	}
+}
+
+void show_cube(node cube){
+	for (int i=0; i<6; i++) {
+		for (int j=0; j<2; j++) {
+			cout<<cube.surface[i][2*j]<<' ';
+			cout<<cube.surface[i][2*j+1]<<' ';
+		}
+		cout<<endl;
+	}
+	cout<<endl<<endl;
+}
+
+
+int main(int argc, char const *argv[]) {
+	// node test;
+	// for (int i=0; i<6; i++) {
+	// 	for (int j=0; j<4; j++) {
+	// 		cin>>test.surface[i][j];
+	// 	}
+	// }
+	// show_cube(test);
+	// test = move_to(test,0);//test R
+	// show_cube(test);
+	// return 0;
+
+	node begin;
+	int t_num;
+	for (int i=0; i<6; i++) {
+		for (int j=0; j<2; j++) {
+			cin>>t_num;
+			switch(t_num) {
+			case 0:
+				begin.surface[i][2*j] = 0;
+				begin.surface[i][2*j+1] = 0;
+				break;
+			case 1:
+				begin.surface[i][2*j] = 0;
+				begin.surface[i][2*j+1] = 1;
+				break;
+			case 10:
+				begin.surface[i][2*j] = 1;
+				begin.surface[i][2*j+1] = 0;
+				break;
+			case 11:
+				begin.surface[i][2*j] = 1;
+				begin.surface[i][2*j+1] = 1;
+				break;
+			}
+		}
+	}
+	// show_cube(begin);
+	if (is_solved(begin)) {
+		cout<<0<<endl;
+		return 0;
+	}
+
+
+	std::queue<node> qrq;
+	std::map<int, int> step;
 	
-	return 0;
+	qrq.push(begin);
+	while (!qrq.empty()) {
+		node t_status = qrq.front();
+		node t_next;
+		qrq.pop();
+		for (int i=0; i<6; i++) {
+			t_next = move_to(t_status,i);
+			get_hash(t_next);
+
+			// cout<<t_next.hash_num<<endl;
+			// show_cube(t_next);
+
+			if (step[t_next.hash_num] == 0) { // 判重
+				// show_cube(t_next);
+
+				if (is_solved(t_next)) {
+					cout<<step[t_status.hash_num]+1<<endl;
+					// show_cube(t_next);
+					return 0;
+					
+				}
+				else {
+					step[t_next.hash_num] = step[t_status.hash_num] + 1;
+					qrq.push(t_next);
+				}
+			}
+		}
+	}
+	return 0; 
 }
 
 
