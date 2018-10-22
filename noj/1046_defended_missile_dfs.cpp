@@ -28,6 +28,7 @@ int main(int argc, char const *argv[]) {
             cin>>height[i];
         }
         ans = 0;
+        t_sum_missile = 0;
         dfs(0,9999999);
         cout<<ans<<endl;
     }
