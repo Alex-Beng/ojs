@@ -14,7 +14,7 @@ int dfs(int n, int k) {// 从n个中最多取k个必胜
         return dp[n][k];
     } 
     else {
-        int t_ans = 1;
+        
         for (int i=1; i<=n&&i<=k; i++) {
             // t_ans *= dfs(n-i, 2*i);
             if (dfs(n-i, 2*i) == 0) { // 这个min很关键！
