@@ -5,7 +5,7 @@ flag = True
 for i in range(12):
     money_in_hand += 300
     budget.append(int(input()))
-    
+
     if not flag:
         continue
 
