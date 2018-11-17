@@ -34,5 +34,4 @@
         "utility": "cpp"
     },
     "python.jediEnabled": false,
-    "python.linting.flake8Enabled": true
 }
