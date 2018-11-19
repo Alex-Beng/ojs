@@ -9,8 +9,8 @@ int main(){
     int N;
     while( cin>>N ){
         for ( int i = 3; i <= N; i++ ){
-            dp[i] = dp[i-1] + dp[i-2];
+            dp[i] = (dp[i-1] + dp[i-2])%(1000000000+7);
         }
-        cout<<dp[N]%1000000000+7<<endl;
+        cout<<dp[N]<<endl;
     }
 }
