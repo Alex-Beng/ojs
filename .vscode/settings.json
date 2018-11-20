@@ -34,4 +34,5 @@
         "utility": "cpp"
     },
     "python.jediEnabled": false,
+    "python.linting.pylintEnabled": true,
 }
