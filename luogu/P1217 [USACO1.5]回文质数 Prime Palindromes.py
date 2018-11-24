@@ -5,13 +5,13 @@
 n = 100000001
 Del = [0] * (n + 1)
 prime = []
-for a in range(2,n + 1):
-    if Del[a] == 0:
-        prime.append(a)
-    for b in prime:
-        if a * b > n: break
-        Del[a * b] = 1
-        if a % b == 0: break
+# for a in range(2,n + 1):
+#     if Del[a] == 0:
+#         prime.append(a)
+#     for b in prime:
+#         if a * b > n: break
+#         Del[a * b] = 1
+#         if a % b == 0: break
 
 def IsPrime(num, flag):
     if flag == 0:
@@ -40,13 +40,13 @@ def IsPrime(num, flag):
                 if i%prime_num[j] == 0:
                     break
         return is_prime[num]
-# a = 0
-# while True:
-#     try:
-#         a = int(input())
-#         print(IsPrime(a, 2))
-#     except:
-#         break
+a = 0
+while True:
+    try:
+        a = int(input())
+        print(IsPrime(a, 1))
+    except:
+        break
 
 # IsPrime(10000000, 2)
 
