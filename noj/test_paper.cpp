@@ -1,56 +1,68 @@
 
 #include <iostream>
-#include <stdio.h>
 using namespace std;
-int x, y;
-int mark[1000000];
-int sum[1000000];
-int a[1000000];
-int sta = 0, endd = 0, res = 0;
-void solve()
-{
-    int m;
-    while (1) {
-        if (a[sta] == x) {
-            res = sum[sta];
-            break;
-        }
 
-        m = a[sta] + 1;
-        if (mark[m] == 0) {
-            sum[++endd] = sum[sta] + 1;
-            mark[m] = 1;
-            a[endd] = m;
-        }
-
-        m = a[sta] - 1;
-        if (mark[m] == 0) {
-            sum[++endd] = sum[sta] + 1;
-            mark[m] = 1;
-            a[endd] = m;
-        }
-        m = a[sta];
-        if (m % 2 == 0) {
-            m = a[sta] / 2;
-            if (mark[m] == 0) {
-                sum[++endd] = sum[sta] + 1;
-                mark[m] = 1;
-                a[endd] = m;
-            }
-        }
-        sta++;
-    }
-}
-
-int main()
-{
-    cin >> x >> y;
-    sum[0] = 0;
-    a[0] = y;
-    solve();
-    cout << res << endl;
+int main(int argc, char const *argv[]) {
+    ostream a();
+    a<<1<<endl;
     return 0;
 }
+
+
+
+
+// #include <iostream>
+// #include <stdio.h>
+// using namespace std;
+// int x, y;
+// int mark[1000000];
+// int sum[1000000];
+// int a[1000000];
+// int sta = 0, endd = 0, res = 0;
+// void solve()
+// {
+//     int m;
+//     while (1) {
+//         if (a[sta] == x) {
+//             res = sum[sta];
+//             break;
+//         }
+
+//         m = a[sta] + 1;
+//         if (mark[m] == 0) {
+//             sum[++endd] = sum[sta] + 1;
+//             mark[m] = 1;
+//             a[endd] = m;
+//         }
+
+//         m = a[sta] - 1;
+//         if (mark[m] == 0) {
+//             sum[++endd] = sum[sta] + 1;
+//             mark[m] = 1;
+//             a[endd] = m;
+//         }
+//         m = a[sta];
+//         if (m % 2 == 0) {
+//             m = a[sta] / 2;
+//             if (mark[m] == 0) {
+//                 sum[++endd] = sum[sta] + 1;
+//                 mark[m] = 1;
+//                 a[endd] = m;
+//             }
+//         }
+//         sta++;
+//     }
+// }
+
+// int main()
+// {
+//     cin >> x >> y;
+//     sum[0] = 0;
+//     a[0] = y;
+//     solve();
+//     cout << res << endl;
+//     return 0;
+// }
 
 // #include<iostream>
 // #include<cstdio>
