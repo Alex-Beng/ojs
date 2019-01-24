@@ -1,10 +1,10 @@
-
-#include <iostream>
+#include <bits/stdc++.h>
+#include <Windows.h>
 using namespace std;
 
 int main(int argc, char const *argv[]) {
-    ostream a();
-    a<<1<<endl;
+    cout<<"卧槽"<<endl;
+    getchar();
     return 0;
 }
 
