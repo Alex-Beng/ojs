@@ -5,3 +5,7 @@
 *.out
 题面
 test_data
+Questions
+*.jpg
+*.png
+*.jpeg
