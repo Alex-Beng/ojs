@@ -1,4 +1,4 @@
-#include "LinearList.h"
+#include "SeqList.h"
 
 int main(int argc, char const *argv[]) {
     
