@@ -1,3 +1,6 @@
+#ifndef LINEARLIST_H
+#define LINEARLIST_H
+
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -22,3 +25,5 @@ public:
     virtual void input() = 0;
     virtual void output() = 0;
 };
+
+#endif

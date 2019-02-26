@@ -1,6 +1,7 @@
-#include "LinearList.h"
+#ifndef SEQLIST_H
+#define SEQLIST_H
 
-const int default_size = 100;
+#include "LinearList.h"
 
 template<class T>
 class SeqList:public LinearList<T> {
@@ -10,7 +11,7 @@ protected:
     int last;
     void resize(int new_size);
 public:
-    SeqList(int size = default_size);
+    SeqList(int size = 100);
     SeqList(SeqList<T>& L);
     ~SeqList();
 
@@ -202,3 +203,5 @@ void SeqList<T>::output() {
     }
     cout<<endl;
 }
+
+#endif 
