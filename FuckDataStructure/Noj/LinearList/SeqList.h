@@ -16,7 +16,7 @@ public:
     ~SeqList();
 
     int Size() const;
-    int Lenght() const;
+    int Length() const;
     int Search(T& x) const;
     int Locate(int i) const;
     bool getData(int i, T& x) const;
@@ -95,7 +95,7 @@ int SeqList<T>::Size()const {
 }
 
 template<typename T>
-int SeqList<T>::Lenght()const {
+int SeqList<T>::Length()const {
     return max_size;
 }
 
