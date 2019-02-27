@@ -53,6 +53,7 @@ SingleLinkList<T>::SingleLinkList(T& x) {
 template<class T>
 SingleLinkList<T>::SingleLinkList(SingleLinkList<T>& L) {
     first = new LinkNode;
+    Len = 0;
 
     LinkNode* L_ptr = L.getHeader();
     LinkNode* this_ptr = first;
@@ -63,6 +64,7 @@ SingleLinkList<T>::SingleLinkList(SingleLinkList<T>& L) {
         L_ptr = L_ptr->next;
 
         this_ptr->data = L_ptr->data;
+        Len++;
     }
 }
 
@@ -89,6 +91,108 @@ int SingleLinkList<T>::Search(T& x)const {
             return  0;
         }
     }
+}
+
+template<class T>
+bool SingleLinkList<T>::getData(int i, T& x)const {
+    LinkNode* t_ptr = first;
+    for (int j = 0; j < i; j++) {
+        if (t_ptr->next != NULL) {
+            t_ptr = t_ptr->next;
+        }
+        else {
+            return false;
+        }
+    }
+    x = t_ptr->data;
+    return true;
+}
+
+template<class T>
+bool SingleLinkList<T>::setData(int i, T& x) {
+    LinkNode* t_ptr = first;
+    for (int j = 0; j < i; j++) {
+        if (t_ptr->next == NULL) {
+            return false;
+        }
+        else {
+            t_ptr = t_ptr->next;
+        }
+    }
+    t_ptr->data = x;
+}
+
+template<class T>
+bool SingleLinkList<T>::Insert(int i, T& x) {
+    if (i >= 0) {
+        LinkNode* t_ptr = first;
+        for (int j = 0; j < i; j++) {
+            if (t_ptr->next == NULL) {
+                return false;
+            }
+            else {
+                t_ptr = t_ptr->next;
+            }
+        }
+        LinkNode* new_node = new LinkNode;
+        new_node->data = x;
+        new_node->next = t_ptr->next;
+
+        t_ptr->next = new_node;
+
+        Len++;
+    }
+    else {
+        return false;
+    }
+}
+
+template<class T>
+bool SingleLinkList<T>::Remove(int i, T& x) {
+    if (i >= 1) {
+        LinkNode* t_ptr = first;
+        for (int j = 0; j < i-1; j++) {
+            if (t_ptr->next == NULL) {
+                return false;
+            }
+            else {
+                t_ptr = t_ptr->next;
+            }
+        }
+        LinkNode* delete_ptr = t_ptr->next;
+        t_ptr->next = delete_ptr->next;
+        delete delete_ptr;
+        Len--;
+    }
+    else {
+        return false;
+    }
+}
+
+template<class T>
+void SingleLinkList<T>::Sort() {
+
+}
+
+template<class T>
+void SingleLinkList<T>::input() {
+    int n;
+    cin>>n;
+    T t;
+    for (int i = 0; i < n; i++) {
+        cin>>t;
+        Insert(i, t);
+    }
+}
+
+template<class T>
+void SingleLinkList<T>::output() {
+    LinkNode* t_ptr = first;
+    while (t_ptr->next != NULL) {
+        t_ptr = t_ptr->next;
+        cout<<t_ptr->data<<' ';
+    }
+    cout<<endl;
 }
 
 #endif 

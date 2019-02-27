@@ -23,8 +23,6 @@ public:
     bool setData(int i, T& x);
     bool Insert(int i, T& x);
     bool Remove(int i, T& x);
-    bool IsEmpty() const;
-    bool IsFull() const;
     void Sort();
     void input();
     void output();
