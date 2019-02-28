@@ -4,11 +4,14 @@
 #include "LinearList.h"
 // 注意实现的是有附加头节点的单链表
 template<class T>
-class SingleLinkList:public LinearList<T> {
+class SingleLinkList {
 protected:
     struct LinkNode {
         T data;
         LinkNode* next;
+        LinkNode() {
+            next = NULL;
+        }
     };
     LinkNode* first;
     int Len;
@@ -29,7 +32,6 @@ public:
     void input();
     void output();
 public:
-    LinkNode* getHeader() const;
     T* Locate(int i) const;             // 定位链表第i项，返回T*指针
 };
 
@@ -44,10 +46,9 @@ SingleLinkList<T>::SingleLinkList(T& x) {
     first = new LinkNode;
     Len = 0;
 
-    LinkNode* t_ptr = first->next;
-    t_ptr = new LinkNode;
+    first->next = new LinkNode;
     Len++;
-    t_ptr->data = x;
+    first->next->data = x;
 }
 
 template<class T>
@@ -161,6 +162,8 @@ bool SingleLinkList<T>::Remove(int i, T& x) {
         }
         LinkNode* delete_ptr = t_ptr->next;
         t_ptr->next = delete_ptr->next;
+
+        x = delete_ptr->data;
         delete delete_ptr;
         Len--;
     }
@@ -168,6 +171,12 @@ bool SingleLinkList<T>::Remove(int i, T& x) {
         return false;
     }
 }
+
+template<class T>
+bool SingleLinkList<T>::IsEmpty()const {
+    return (Len == 0);
+}
+
 
 template<class T>
 void SingleLinkList<T>::Sort() {
@@ -179,7 +188,8 @@ void SingleLinkList<T>::input() {
     int n;
     cin>>n;
     T t;
-    for (int i = 0; i < n; i++) {
+    int L = Len;
+    for (int i = L; i < n+L; i++) {
         cin>>t;
         Insert(i, t);
     }
@@ -193,6 +203,22 @@ void SingleLinkList<T>::output() {
         cout<<t_ptr->data<<' ';
     }
     cout<<endl;
+}
+
+template<class T>
+T* SingleLinkList<T>::Locate(int i)const {
+    LinkNode* t_ptr = first;
+    for (int j = 0; j < i; j++) {
+        if (t_ptr->next == NULL) {
+            cerr<<"Locate error in line: "<<__LINE__<<endl;
+            exit(1);
+        }
+        else {
+            t_ptr = t_ptr->next;
+        }
+        
+    }
+    return &(t_ptr->data);
 }
 
 #endif 
