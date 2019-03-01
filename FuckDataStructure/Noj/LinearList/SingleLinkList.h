@@ -23,6 +23,7 @@ public:
 
     int Length() const;
     int Search(T& x) const;             // 找是单链表的第几项
+    T* Locate(int i) const;             // 定位链表第i项，返回T*指针
     bool getData(int i, T& x) const;
     bool setData(int i, T& x);
     bool Insert(int i, T& x);
@@ -31,8 +32,6 @@ public:
     void Sort();
     void input();
     void output();
-public:
-    T* Locate(int i) const;             // 定位链表第i项，返回T*指针
 };
 
 template<class T>
