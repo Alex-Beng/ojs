@@ -2,8 +2,24 @@
 #include "SingleLinkList.h"
 #include "CircularLinkList.h"
 #include "Stack.h"
+#include "Queue.h"
 
 int main(int argc, char const *argv[]) {
+    Queue<int> qrq(5);
+    int n, ttt;
+    cin>>n;
+    for (int i=0; i<n; i++) {
+        cin>>ttt;
+        if (qrq.Push(ttt)) {
+            ;
+        }
+        else {
+            cout<<"No"<<endl;
+        }
+    }
+    while (!qrq.Empty()) {
+        cout<<qrq.Pop()<<endl;
+    }
     int t = 233;
     // CircularLinkList<int> cll;
     // cll.input();
