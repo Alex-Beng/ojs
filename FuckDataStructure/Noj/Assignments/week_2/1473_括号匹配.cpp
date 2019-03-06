@@ -1,7 +1,6 @@
-#ifndef STACK_H
-#define STACK_H
-
-#include <bits/stdc++.h>
+#include <iostream>
+#include <cstring>
+#include <algorithm>
 using namespace std;
 
 template<class T>
@@ -98,4 +97,26 @@ int Stack<T>::Size()const {
     return max_size;
 }
 
-#endif
+
+int main(int argc, char const *argv[]) {
+    Stack<char> sk;
+    char t_char;
+    char t_str[233];
+    cin>>t_str;
+    for (int i=0; i<strlen(t_str); i++) {
+        t_char = t_str[i];
+        if (!sk.Empty() && (abs(sk.Top()-t_char) == 1 || abs(sk.Top()-t_char) == 2)) {
+            sk.Pop();
+        }
+        else {
+            sk.Push(t_char);
+        }
+    }
+    if (sk.Empty()) {
+        cout<<"Yes"<<endl;
+    }
+    else {
+        cout<<"No"<<endl;
+    }
+    return 0;
+}

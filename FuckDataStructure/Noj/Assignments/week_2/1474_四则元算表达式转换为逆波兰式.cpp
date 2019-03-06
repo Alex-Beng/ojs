@@ -1,7 +1,6 @@
-#ifndef STACK_H
-#define STACK_H
-
-#include <bits/stdc++.h>
+#include <iostream>
+#include <cstring>
+#include <algorithm>
 using namespace std;
 
 template<class T>
@@ -98,4 +97,7 @@ int Stack<T>::Size()const {
     return max_size;
 }
 
-#endif
+int main(int argc, char const *argv[]) {
+    
+    return 0;
+}
