@@ -7,8 +7,8 @@ using namespace std;
 template<class T>
 struct LinkNode {
     T data;
-    LinkNode* former;
-    LinkNode* next;
+    LinkNode<T>* former;
+    LinkNode<T>* next;
     LinkNode() {
         former = NULL;
         next = NULL;

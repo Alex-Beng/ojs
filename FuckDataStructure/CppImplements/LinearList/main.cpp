@@ -8,7 +8,7 @@
 int main(int argc, char const *argv[]) {
     DoublyLinkList<int> dll;
     dll.PushBack(2);
-    for (int i=0; i<400; i++) {
+    for (int i=0; i<10; i++) {
         dll.PushBack(0);
     }
     dll.output();
@@ -18,8 +18,10 @@ int main(int argc, char const *argv[]) {
     }
     dll.output();
 
-    for (LinkNode<int>* i = dll.getHead(); i != NULL; i = i->next) {
-        i->data+=7;
+    LinkNode<int>* it = dll.getHead();
+    it = it->next;
+    for (; it != NULL; it = it->next) {
+        it->data+=7;
     }
     dll.output();
 
