@@ -3,8 +3,27 @@
 #include "CircularLinkList.h"
 #include "Stack.h"
 #include "Queue.h"
+#include "DoublyLinkList.h"
 
 int main(int argc, char const *argv[]) {
+    DoublyLinkList<int> dll;
+    dll.PushBack(2);
+    for (int i=0; i<400; i++) {
+        dll.PushBack(0);
+    }
+    dll.output();
+    
+    for (LinkNode<int>* tail = dll.getEnd(); tail != dll.getHead(); tail = tail->former) {
+        tail->data += 1;
+    }
+    dll.output();
+
+    for (LinkNode<int>* i = dll.getHead(); i != NULL; i = i->next) {
+        i->data+=7;
+    }
+    dll.output();
+
+
     Queue<int> qrq(5);
     int n, ttt;
     cin>>n;
