@@ -87,7 +87,7 @@ int main(int argc, char const *argv[]) {
     sum.PushBack(2);
     An.PushBack(2);
 
-    for (int i=0; i<600; i++) {
+    for (int i=0; i<nums+5; i++) {
         sum.PushBack(0);
         An.PushBack(0);
     }
