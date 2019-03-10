@@ -4,6 +4,7 @@
 #include "Stack.h"
 #include "Queue.h"
 #include "DoublyLinkList.h"
+#include "TripleSparseMat.h"
 
 int main(int argc, char const *argv[]) {
     DoublyLinkList<int> dll;
