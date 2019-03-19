@@ -1,7 +1,5 @@
-#ifndef TRISPARSEMAT_H
-#define TRISPARSEMAT_H
-
-#include <bits/stdc++.h>
+#include <iostream>
+#include <algorithm>
 using namespace std;
 
 template<class T>
@@ -9,6 +7,7 @@ struct Triple {
     int col;
     int row;
     T value;
+
     Triple() {
         col = -1;
         row = -1;
@@ -24,7 +23,7 @@ struct Triple {
 template<class T>
 bool for_sort(Triple<T>a, Triple<T>b) {
     if (a.row != b.row) {
-        return a.row > b.row;
+        return a.row < b.row;
     }
     else {
         return a.col < b.col;
@@ -43,7 +42,7 @@ public:
     TripleSparseMat(int size=233);
     ~TripleSparseMat();
 
-    void input();
+    void input(int v_nums);
     void output();
     void t();         // 转置
     void Insert(int row, int col, T value);
@@ -64,19 +63,21 @@ TripleSparseMat<T>::~TripleSparseMat() {
 }
 
 template<class T>
-void TripleSparseMat<T>::input() {
-    cin>>row>>col;
+void TripleSparseMat<T>::input(int v_nums) {
 
     int t_r, t_c, t_v;
-    while (cin>>t_r>>t_c>>t_v && (t_r||t_c||t_c)) {
+    for (int i=0; i<v_nums; i++) {
+        cin>>t_r>>t_c>>t_v;
         data[++value_nums].row = t_r;
         data[value_nums].col = t_c;
         data[value_nums].value = t_v;
     }
+
 }
 
 template<class T>
 void TripleSparseMat<T>::output() {
+    sort(data, data+value_nums, for_sort<T>);
     for (int i=0; i<=value_nums; i++) {
         cout<<data[i].row<<' '
             <<data[i].col<<' '
@@ -93,7 +94,6 @@ void TripleSparseMat<T>::t() {
     }
     sort(data, data+value_nums, for_sort<T>);
 }
-
 
 template<class T>
 void TripleSparseMat<T>::Insert(int row, int col, T value) {
@@ -137,4 +137,18 @@ void TripleSparseMat<T>::Insert(int row, int col, T value) {
     // cout<<data[middle].row<<' '<<data[middle].col<<endl;
 }
 
-#endif 
+int main(int argc, char const *argv[]) {
+    int row, col;
+    int size_1, size_2;
+    cin>>row>>col>>size_1>>size_2;
+    
+    TripleSparseMat<int> tsm;
+    tsm.input(size_1);
+    int t_r, t_c, t_v;
+    for (int i=0; i<size_2; i++) {
+        cin>>t_r>>t_c>>t_v;
+        tsm.Insert(t_r, t_c, t_v);
+    }
+    tsm.output();
+    return 0;
+}
