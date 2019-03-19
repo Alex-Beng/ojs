@@ -7,6 +7,15 @@
 #include "TripleSparseMat.h"
 
 int main(int argc, char const *argv[]) {
+    TripleSparseMat<int> tsm;
+    tsm.input();
+    // tsm.output();
+    tsm.t();
+    tsm.output();
+    return 0;
+
+
+
     DoublyLinkList<int> dll;
     dll.PushBack(2);
     for (int i=0; i<10; i++) {
