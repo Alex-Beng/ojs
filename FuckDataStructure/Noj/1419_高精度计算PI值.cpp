@@ -82,8 +82,8 @@ int main(int argc, char const *argv[]) {
     int nums;
     cin>>nums;
 
-    DoublyLinkList<short> sum;
-    DoublyLinkList<short> An;
+    DoublyLinkList<long long> sum;
+    DoublyLinkList<long long> An;
     sum.PushBack(2);
     An.PushBack(2);
 
@@ -93,12 +93,12 @@ int main(int argc, char const *argv[]) {
     }
 
     int n = 1;
-    short ttt;
-    short carry_in;
+    long long ttt;
+    long long carry_in;
     bool break_flag;
 
-    LinkNode<short>* i;
-    LinkNode<short>* j;
+    LinkNode<long long>* i;
+    LinkNode<long long>* j;
     while (1) {
 
         // 然后乘 n
