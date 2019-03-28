@@ -109,37 +109,26 @@ public:
             t_ptr = t_ptr->next;
         }
     }
-    LinkNode* Reverse(int layer) {
-        if (layer == len-1) {
-
+    void Reverse(int layer) {
+        LinkNode* t_ptr = first->next;
+        LinkNode* tail;
+        if (layer == len) {
+            return ;
         }
         else {
-            Reverse(layer+1);
-            LinkNode* t_ptr = first;
-            for (int i=0; i<len-1-layer; i++) {
+            for (int i=0; i<layer; i++) {
                 t_ptr = t_ptr->next;
             }
-            
+            Reverse(layer+1);
+            // cout<<t_ptr->data<<endl<<endl;
         }
-
-        LinkNode* tail = first;
-        LinkNode* t_ptr = first->next;
-
-        while (tail->next != NULL) {
+        tail = first;        
+        for (int i=0; i<len-layer-1; i++) {
             tail = tail->next;
         }
-        // cout<<tail->data<<endl;
-
-        for (int i=0; i<len; i++) {
-            t_ptr = first->next;
-
-            tail->next = t_ptr;
-            first->next = t_ptr->next;
-
-            t_ptr->next = NULL;
-
-            tail = tail->next;
-        }
+        tail->next = t_ptr;
+        t_ptr->next = NULL;
+        // this->output();
     }
 };
 
@@ -155,8 +144,8 @@ int main(int argc, char const *argv[]) {
     sq.Revserse();
     sq.output();
     cout<<endl;
-    ll.output();
-    ll.Reverse();
+    // ll.output();
+    ll.Reverse(0);
     ll.output();
     return 0;
 }
