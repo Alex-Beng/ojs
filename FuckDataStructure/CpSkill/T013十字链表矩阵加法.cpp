@@ -1,6 +1,3 @@
-#ifndef CROSS_SPARSE_MAT_H
-#define CROSS_SPARSE_MAT_H
-
 #include <iostream>
 using namespace std;
 
@@ -36,6 +33,29 @@ public:
 
     SMatNode<T>* GetHead();
 };
+
+int main(int argc, char const *argv[]) {
+    int m, n;
+    int t1, t2;
+    cin>>m>>n>>t1>>t2;
+    CrossSparseMat<int> m1(m, n, t1);
+    CrossSparseMat<int> m2(m, n, t2);
+
+    m1.input(t1);
+    m2.input(t2);
+
+    // cout<<endl;
+    // m1.output();
+    // cout<<endl;
+    // m2.output();
+    // cout<<endl;
+
+    m1.Add(m2);
+    m1.output();
+
+    return 0;
+}
+
 
 
 template<class T>
@@ -88,12 +108,17 @@ void CrossSparseMat<T>::input(int value_nums) {
 
 template<class T>
 void CrossSparseMat<T>::output() {
+    int counter = 0;
     SMatNode<T>* t_ptr = head->row_next;
     while (t_ptr != head) {
         SMatNode<T>* t_row_head = t_ptr;
         t_ptr = t_ptr->col_next;
         while (t_ptr != t_row_head) {
-            cout<<t_ptr->row<<' '<<t_ptr->col<<' '<<t_ptr->value<<endl;           
+            cout<<t_ptr->row<<' '<<t_ptr->col<<' '<<t_ptr->value;
+            counter++;
+            if (counter != head->value-1) {
+                cout<<endl;
+            }
             t_ptr = t_ptr->col_next;
         }
 
@@ -171,11 +196,13 @@ void CrossSparseMat<T>::Add(CrossSparseMat<T>& csm) {
     SMatNode<T>* t_head = csm.GetHead();
     SMatNode<T>* t_ptr = t_head->row_next;
 
+    head->value += t_head->value;
+
     while (t_ptr != t_head) {
         SMatNode<T>* t_row_head = t_ptr;
         t_ptr = t_ptr->col_next;
         while (t_ptr != t_row_head) {
-            cout<<t_ptr->row<<' '<<t_ptr->col<<' '<<t_ptr->value<<endl;           
+            // cout<<t_ptr->row<<' '<<t_ptr->col<<' '<<t_ptr->value<<endl;           
             this->Insert(t_ptr);
             t_ptr = t_ptr->col_next;
         }
@@ -183,5 +210,3 @@ void CrossSparseMat<T>::Add(CrossSparseMat<T>& csm) {
         t_ptr = t_ptr->row_next;
     }
 }
-
-#endif

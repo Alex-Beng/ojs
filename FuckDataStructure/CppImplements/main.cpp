@@ -5,8 +5,19 @@
 #include "Queue.h"
 #include "DoublyLinkList.h"
 #include "TripleSparseMat.h"
+#include "CrossSparseMat.h"
 
 int main(int argc, char const *argv[]) {
+    CrossSparseMat<int> csm(2, 2, 2);
+    CrossSparseMat<int> csm2(2, 2, 2);
+    csm.input(2);
+    csm2.input(2);
+    csm.output();
+
+    csm.Add(csm2);
+    csm.output();
+    return 0;
+
     TripleSparseMat<int> tsm;
     tsm.input();
     // tsm.output();
