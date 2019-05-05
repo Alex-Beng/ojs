@@ -7,7 +7,6 @@ struct Triple {
     int col;
     int row;
     T value;
-
     Triple() {
         col = -1;
         row = -1;
@@ -41,7 +40,6 @@ protected:
 public:
     TripleSparseMat(int size=233);
     ~TripleSparseMat();
-
     void input();
     void output();
     void t();         // 转置

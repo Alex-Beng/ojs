@@ -6,8 +6,20 @@
 #include "DoublyLinkList.h"
 #include "TripleSparseMat.h"
 #include "CrossSparseMat.h"
+#include "GenList.h"
 
 int main(int argc, char const *argv[]) {
+    GenList<int> gl;    
+    GListNode<int>* head = gl.getHead();
+
+    char str[100];
+    cin>>str;
+
+    gl.input(str, head);
+    // cout<<gl.Lenght(gl.getHead());
+        cout<<' '<<gl.Depth(gl.getHead())<<endl;
+    return 0;
+
     CrossSparseMat<int> csm(2, 2, 2);
     CrossSparseMat<int> csm2(2, 2, 2);
     csm.input(2);
