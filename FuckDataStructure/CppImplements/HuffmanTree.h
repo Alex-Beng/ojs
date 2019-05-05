@@ -3,7 +3,7 @@
 
 template<class T>
 struct TreeNode {
-    /* data */
+    float data;
 };
 
 
