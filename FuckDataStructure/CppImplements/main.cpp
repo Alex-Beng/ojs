@@ -8,6 +8,7 @@
 // #include "CrossSparseMat.h"
 // #include "GenList.h"
 #include "MinHeap.h"
+#include "HuffmanTree.h"
 
 int main(int argc, char const *argv[]) {
     MinHeap<int> t;
@@ -21,6 +22,15 @@ int main(int argc, char const *argv[]) {
     t.Insert(17);
     t.Insert(65);
     t.output();
+    int ttt;
+    t.RemoveMin(ttt);
+    cout<<endl;
+    t.output();
+    cout<<endl<<ttt<<endl;
+
+    int nums[5] = {4, 6, 9, 666, 233};
+    HuffmanTree<int> hfft(nums, 5);
+    hfft.output(hfft.root);
     return 0;
 
     // GenList<int> gl;    

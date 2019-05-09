@@ -86,8 +86,8 @@ bool MinHeap<T>::isFull() {
 template<class T>
 void MinHeap<T>::SiftDown(int start, int m) {
     int i = start;
-    int j = 2*j + 1;
-    int t = heap[i];
+    int j = 2*i + 1;
+    T t = heap[i];
     while (j <= m) {
         if (j < m && heap[j] > heap[j+1]) {
             j++;
@@ -109,7 +109,7 @@ template<class T>
 void MinHeap<T>::SiftUp(int start) {
     int j = start;
     int i = (j-1) / 2;
-    int t = heap[j];
+    T t = heap[j];
     while (j > 0) {
         if (heap[i] <= t) {
             break;
