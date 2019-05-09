@@ -144,15 +144,18 @@ HuffmanTree<T>::HuffmanTree(T* datas, int n) {
         hp.Insert(work);
     }
 
-    hp.output();
+    // hp.output();
+    // cout<<endl;
     for (int i=0; i<n-1; i++) {
+        parent = new TreeNode<T>;
+        // cout<<"ya"<<i<<endl;
         first = hp.RemoveMin();
         second = hp.RemoveMin();
-        cout<<first->data<<' '<<second->data<<endl;
+        // cout<<first->data<<' '<<second->data<<endl;
         Merge(first, second, parent);
         hp.Insert(parent);
-        cout<<endl;
-        hp.output();
+        // cout<<endl;
+        // hp.output();
     }
     root = parent;
 }
@@ -164,7 +167,6 @@ HuffmanTree<T>::~HuffmanTree() {
 
 template<class T>
 void HuffmanTree<T>::Merge(TreeNode<T>* t1, TreeNode<T>* t2, TreeNode<T>* parent) {
-    parent = new TreeNode<T>;
     parent->l_child = t1;
     parent->r_child = t2;
     parent->data = t1->data + t2->data;
