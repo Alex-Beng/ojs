@@ -14,6 +14,7 @@ public:
     bool RemoveMin(T& x);
     bool isEmpty();
     bool isFull();
+    void output();
 private:
     T* heap;
     int currect_size;
@@ -122,6 +123,19 @@ void MinHeap<T>::SiftUp(int start) {
     heap[j] = t;
 }
 
+template<class T> 
+void MinHeap<T>::output() {
+    int t_sum = 0;
+    int a_i = 1;
+    for (int i=0; i<currect_size; i++) {
+        cout<<heap[i]<<' ';
+        if (i == t_sum) {
+            cout<<endl;
+            t_sum += a_i*2;
+            a_i *= 2;
+        }
+    }
+}
 
 
 #endif

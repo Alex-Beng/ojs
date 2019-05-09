@@ -20,6 +20,7 @@ int main(int argc, char const *argv[]) {
     t.Insert(31);
     t.Insert(17);
     t.Insert(65);
+    t.output();
     return 0;
 
     // GenList<int> gl;    
