@@ -8,11 +8,10 @@ using namespace std;
 template<class T>
 struct TreeNode {
     T data;
-    int weight;
     TreeNode* l_child, r_child, parent;
     TreeNode(): l_child(NULL), r_child(NULL), parent(NULL) {}
-    bool operator <=(TreeNode& r) {return this->weight <= r.weight;}
-    bool operator >(TreeNode& r) {return this->weight > r.weight;}
+    bool operator <=(TreeNode& r) {return this->data <= r.data;}
+    bool operator >(TreeNode& r) {return this->data > r.data;}
 };
 
 template<class T>
@@ -29,7 +28,7 @@ protected:
 template<class T>
 HuffmanTree<T>::HuffmanTree(TreeNode<T>* datas, int n) {
     MinHeap<int> hp(n);
-    
+
     for (int i=0; i<n; i++) {
         hp.Insert
     }
