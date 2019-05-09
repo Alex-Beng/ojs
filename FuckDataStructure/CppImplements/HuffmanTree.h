@@ -15,31 +15,19 @@ struct TreeNode {
     bool operator >(TreeNode& r) {return this->data > r.data;}
 };
 
+typedef TreeNode<int>* HeapNode;
 
 class Heap {
     public:
     Heap(int size = 10) {
         max_heap_size = size;
-        this->heap = new TreeNode<int>[max_heap_size];
+        this->heap = new HeapNode[max_heap_size];
         currect_size = 0;
-    }
-    Heap(TreeNode<int>* array, int n) {
-        max_heap_size = n;
-        heap = new TreeNode<int>[max_heap_size];
-        for (int i=0; i<n; i++) {
-            heap[i] = array[i];
-        }
-        currect_size = n;
-        int current_pos = (currect_size-2)/2;
-        while (current_pos >= 0) {
-            SiftDown(current_pos, currect_size-1);
-            current_pos--;
-        }
     }
     ~Heap() {
         delete [] heap;
     }
-    bool Insert(TreeNode<int> x) {
+    bool Insert(TreeNode<int>* x) {
         if (currect_size == max_heap_size) {
             return false;
         }
@@ -51,12 +39,15 @@ class Heap {
         }
     }
 
-    bool RemoveMin(TreeNode<int>& x) {
-        x = heap[0];
+    HeapNode RemoveMin() {
+        // cout<<heap[0].data<<endl;
+        HeapNode x = heap[0];
+        // cout<<"yayaya"<<heap[0].data<<endl;
         heap[0] = heap[currect_size-1];
         currect_size--;
         SiftDown(0, currect_size-1);
-        return true;
+        // cout<<1<<endl;
+        return x;
     }
 
     bool isEmpty() {
@@ -71,7 +62,7 @@ class Heap {
         int t_sum = 0;
         int a_i = 1;
         for (int i=0; i<currect_size; i++) {
-            cout<<heap[i].data<<' ';
+            cout<<heap[i]->data<<' ';
             if (i == t_sum) {
                 cout<<endl;
                 t_sum += a_i*2;
@@ -80,20 +71,20 @@ class Heap {
         }
     }
 private:
-    TreeNode<int>* heap;
+    HeapNode* heap;
     int currect_size;
     int max_heap_size;
 
     void SiftDown(int start, int m) {
         int i = start;
         int j = 2*i + 1;
-        TreeNode<int> t = heap[i];
+        HeapNode t = heap[i];
         while (j <= m) {
-            if (j < m && heap[j] > heap[j+1]) {
+            if (j < m && heap[j]->data > heap[j+1]->data) {
                 j++;
             }
 
-            if (t <= heap[j]) {
+            if (t->data <= heap[j]->data) {
                 break;
             }
             else {
@@ -102,14 +93,14 @@ private:
                 j = 2*j+1;
             }
         }
-        heap[i].data = t.data;
+        heap[i] = t;
     }
     void SiftUp(int start) {
         int j = start;
         int i = (j-1) / 2;
-        TreeNode<int> t = heap[j];
+        TreeNode<int>* t = heap[j];
         while (j > 0) {
-            if (heap[i] <= t) {
+            if (heap[i]->data <= t->data) {
                 break;
             }
             else {
@@ -118,7 +109,7 @@ private:
                 i = (i-1) / 2;
             }
         }
-        heap[j].data = t.data;
+        heap[j] = t;
     }
 };
 
@@ -150,17 +141,16 @@ HuffmanTree<T>::HuffmanTree(T* datas, int n) {
         work->l_child = NULL;
         work->r_child = NULL;
         work->parent  = NULL;
-        hp.Insert(*work);
-        cout<<endl;
-        hp.output();
-        cout<<endl;
+        hp.Insert(work);
     }
 
+    hp.output();
     for (int i=0; i<n-1; i++) {
-        hp.RemoveMin(*first);
-        hp.RemoveMin(*second);
+        first = hp.RemoveMin();
+        second = hp.RemoveMin();
+        cout<<first->data<<' '<<second->data<<endl;
         Merge(first, second, parent);
-        hp.Insert(*parent);
+        hp.Insert(parent);
         cout<<endl;
         hp.output();
     }
@@ -186,8 +176,10 @@ template<class T>
 void HuffmanTree<T>::output(TreeNode<T>* node) {
     if (node != NULL) {
         cout<<node->data<<endl;
-        output(node->l_child);
-        output(node->r_child);
+        if (node->l_child != NULL)
+            output(node->l_child);
+        if (node->r_child != NULL)
+            output(node->r_child);
     }
 }
 

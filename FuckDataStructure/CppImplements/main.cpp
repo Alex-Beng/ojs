@@ -11,22 +11,22 @@
 #include "HuffmanTree.h"
 
 int main(int argc, char const *argv[]) {
-    MinHeap<int> t;
-    t.Insert(9);
-    t.Insert(23);
-    t.Insert(78);
-    t.Insert(45);
-    t.Insert(87);
-    t.Insert(53);
-    t.Insert(31);
-    t.Insert(17);
-    t.Insert(65);
-    t.output();
-    int ttt;
-    t.RemoveMin(ttt);
-    cout<<endl;
-    t.output();
-    cout<<endl<<ttt<<endl;
+    // MinHeap<int> t;
+    // t.Insert(9);
+    // t.Insert(23);
+    // t.Insert(78);
+    // t.Insert(45);
+    // t.Insert(87);
+    // t.Insert(53);
+    // t.Insert(31);
+    // t.Insert(17);
+    // t.Insert(65);
+    // t.output();
+    // int ttt;
+    // t.RemoveMin(ttt);
+    // cout<<endl;
+    // t.output();
+    // cout<<endl<<ttt<<endl;
 
     int nums[5] = {4, 6, 9, 666, 233};
     HuffmanTree<int> hfft(nums, 5);
