@@ -31,6 +31,11 @@ int main(int argc, char const *argv[]) {
     int nums[5] = {4, 6, 9, 666, 233};
     HuffmanTree<int> hfft(nums, 5);
     hfft.output(hfft.root);
+    // cout<<hfft.root->data<<endl
+    //     <<hfft.root->l_child->data<<' '<<hfft.root->r_child->data<<endl;
+    // if (hfft.root->l_child->l_child == NULL && hfft.root->l_child->r_child == NULL) {
+    //     cout<<"yayaya"<<endl;
+    // }
     return 0;
 
     // GenList<int> gl;    

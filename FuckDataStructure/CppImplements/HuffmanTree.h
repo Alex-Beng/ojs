@@ -151,8 +151,9 @@ HuffmanTree<T>::HuffmanTree(T* datas, int n) {
         // cout<<"ya"<<i<<endl;
         first = hp.RemoveMin();
         second = hp.RemoveMin();
-        // cout<<first->data<<' '<<second->data<<endl;
+        // cout<<first->data<<' '<<secsond->data<<endl;
         Merge(first, second, parent);
+        // cout<<parent->data<<endl;
         hp.Insert(parent);
         // cout<<endl;
         // hp.output();
