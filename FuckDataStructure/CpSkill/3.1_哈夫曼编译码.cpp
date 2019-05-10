@@ -1,6 +1,7 @@
 /**
 5
 a b c d e 12 40 15 8 25
+bbbaddeccbbb
  * */
 
 
@@ -250,12 +251,40 @@ int main(int argc, char const *argv[]) {
         cin>>dt[i].w;
     }
     HuffmanTree<data> hfft(dt, n);
-    // hfft.output(hfft.root);
     hfft.GetDict(hfft.root);
-    for (int i=0; i<hfft.value_num; i++) {
-        cout<<(char)hfft.key_char[i]<<' '<<hfft.value_code[i]<<endl;
+    // for (int i=0; i<hfft.value_num; i++) {
+    //     cout<<(char)hfft.key_char[i]<<' '<<hfft.value_code[i]<<endl;
+    // }
+    int* key_char = hfft.key_char;
+    string* value_code = hfft.value_code;
+
+    string raw_str;
+    cin>>raw_str;
+    string encoded_str = "";
+
+    // encoded
+    for (int i=0; i<raw_str.length(); i++) {
+        for (int j=0; j<n; j++) {
+            if (key_char[j] == raw_str[i]) {
+                encoded_str += value_code[j];
+            }
+        }
     }
-    // hfft.GetDict(key_char, value_code);
+
+    // decoded
+    string decoded_str;
+    string t_sub_str = "";
+    for (int i=0; i<encoded_str.length(); i++) {
+        t_sub_str += encoded_str[i];
+        for (int j=0; j<n; j++) {
+            if (t_sub_str == value_code[j]) {
+                decoded_str += (char)key_char[j];
+                t_sub_str = "";
+            }
+        }
+    }
+    cout<<encoded_str<<endl;
+    cout<<decoded_str<<endl;
     return 0;
 }
 
