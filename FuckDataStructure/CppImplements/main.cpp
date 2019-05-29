@@ -7,10 +7,54 @@
 // #include "TripleSparseMat.h"
 // #include "CrossSparseMat.h"
 // #include "GenList.h"
-#include "MinHeap.h"
-#include "HuffmanTree.h"
+// #include "MinHeap.h"
+// #include "HuffmanTree.h"
+#include "Heap_v2.h"
 
 int main(int argc, char const *argv[]) {
+    Heap hp(20);
+    HeapNode t;
+
+    t.data = 1;
+    hp.Insert(t);
+
+    t.data = 5;
+    hp.Insert(t);
+
+    t.data = 2;
+    hp.Insert(t);
+
+    t.data = 7;
+    hp.Insert(t);
+
+    t.data = 9;
+    hp.Insert(t);
+
+    t.data = 90;
+    hp.Insert(t);
+
+    t.data = 2;
+    hp.Insert(t);
+
+    t.data = 4;
+    hp.Insert(t);
+
+    t.data = 3;
+    hp.Insert(t);
+
+    for (int i=0; i<hp.current_size; i++) {
+        cout<<hp.heap[i].data<<' ';
+    }
+    cout<<endl;
+
+    hp.RemoveMin();
+
+    for (int i=0; i<hp.current_size; i++) {
+        cout<<hp.heap[i].data<<' ';
+    }
+
+    return 0;
+
     // MinHeap<int> t;
     // t.Insert(9);
     // t.Insert(23);
@@ -28,9 +72,9 @@ int main(int argc, char const *argv[]) {
     // t.output();
     // cout<<endl<<ttt<<endl;
 
-    int nums[5] = {4, 6, 9, 666, 233};
-    HuffmanTree<int> hfft(nums, 5);
-    hfft.output(hfft.root);
+    // int nums[5] = {4, 6, 9, 666, 233};
+    // HuffmanTree<int> hfft(nums, 5);
+    // hfft.output(hfft.root);
     // cout<<hfft.root->data<<endl
     //     <<hfft.root->l_child->data<<' '<<hfft.root->r_child->data<<endl;
     // if (hfft.root->l_child->l_child == NULL && hfft.root->l_child->r_child == NULL) {

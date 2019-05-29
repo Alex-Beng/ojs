@@ -41,10 +41,10 @@ void minheap::display()
 {
     for(int i = 0;i < currentsize;i++)
     {
-        cout <<"¸¸½Úµã:"<<heap[i]<<" ";
-        if(2*i + 1 < currentsize)  cout <<"×óº¢×Ó:"<<heap[2*i + 1]<<" ";
+        cout <<"ï¿½ï¿½ï¿½Úµï¿½:"<<heap[i]<<" ";
+        if(2*i + 1 < currentsize)  cout <<"ï¿½ï¿½ï¿½ï¿½:"<<heap[2*i + 1]<<" ";
         else cout <<"NULL"<<" ";
-        if(2*i + 2 < currentsize) cout <<"ÓÒº¢×Ó:"<<heap[2*i + 2];
+        if(2*i + 2 < currentsize) cout <<"ï¿½Òºï¿½ï¿½ï¿½:"<<heap[2*i + 2];
         else cout <<"NULL";
         cout <<endl;
     }
