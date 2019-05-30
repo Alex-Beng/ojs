@@ -10,8 +10,9 @@ public:
     HeapNode () {
         ;
     }
-    HeapNode (HeapNode& r) {
+    HeapNode (const HeapNode& r) {
         data = r.data;
+        idx = r.idx;
     }
     bool operator>(HeapNode& r) {
         return data > r.data;
@@ -42,8 +43,16 @@ int main(int argc, char const *argv[]) {
     int n;
     cin>>n;
     int aj_mat[n][n];
+    bool visited[n];
+    int pre_idx[n];
+    int low_cost[n];
+    Heap hp(n);
+    HeapNode t_nd;
 
     for(int i=0; i<n; i++) {
+        visited[i] = false;
+        pre_idx[i] = -1;
+        low_cost[i] = 999999;
         for (int j=0; j<n; j++) {
             cin>>aj_mat[i][j];
         }
@@ -53,7 +62,41 @@ int main(int argc, char const *argv[]) {
     int end_node;
     cin>>begin_node>>end_node;  
 
+    // dj algoritm 
+    low_cost[begin_node] = 0;
+    t_nd.idx = begin_node;
+    t_nd.data = 0;
+    hp.Insert(t_nd);
 
+    while (!hp.IsEmpty()) {
+        HeapNode yayaya;
+        yayaya = hp.RemoveMin();
+        // cout<<"yayaya"<<yayaya.data<<' '<<yayaya.idx<<endl;
+        visited[yayaya.idx] = true;
+        for (int i=0; i<n; i++) {
+            // cout<<i<<' '<<low_cost[yayaya.idx]+aj_mat[yayaya.idx][i]<<' '<<low_cost[i]<<endl;
+            if (!visited[i] && low_cost[yayaya.idx]+aj_mat[yayaya.idx][i] < low_cost[i]) {
+                // cout<<i<<' '<<low_cost[yayaya.idx]+aj_mat[yayaya.idx][i]<<endl;
+                low_cost[i] = low_cost[yayaya.idx]+aj_mat[yayaya.idx][i];
+                pre_idx[i] = yayaya.idx;
+                
+                t_nd.idx = i;
+                t_nd.data = low_cost[i];
+                hp.Insert(t_nd);
+            }
+        }
+    }
+
+    int ans[n];
+    int cnt=0;
+    while (end_node != begin_node) {
+        ans[cnt++] = end_node;
+        end_node = pre_idx[end_node];
+    }
+    ans[cnt] = begin_node;
+    for (int i=cnt; i>=0; i--) {
+        cout<<ans[i]<<endl;
+    }
 
     return 0;
 }
