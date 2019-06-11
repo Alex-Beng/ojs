@@ -22,6 +22,7 @@ int main(int argc, char const *argv[]) {
     TriLLNode<char>* yayaya = llbt.getHead();
     llbt.inputPreOrd(in_ss, yayaya);
     cout<<llbt.getLeafNum(yayaya)<<endl;
+    llbt.outputMidOrd(yayaya);
     // Heap hp(20);
     // HeapNode t;
 
