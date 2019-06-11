@@ -41,7 +41,7 @@ void bfs(int idx_1, int idx_2) {
     queue[queue_head+1] = idx_1;
     been[idx_1] = true;
 
-    while (queue_head <= queue_tail) {
+    while (queue_head != queue_tail) {
         int ttt = queue_tail;
         for (int i=queue_head+1; i<=ttt; i++) {
             for (int j=0; j<n; j++) {
