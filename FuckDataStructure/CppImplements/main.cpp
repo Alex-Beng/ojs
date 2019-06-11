@@ -11,26 +11,44 @@
 // #include "HuffmanTree.h"
 // #include "Heap_v2.h"
 #include "LLBinaryTree.h"
+#include "LLBinarySearchTree.h"
 #include <cstring>
 
 
 int main(int argc, char const *argv[]) {
-    LLBinaryTree<char> llbt;
-    // string in_str;
-    // stringstream in_ss;
-    // cin>>in_str;
-    // in_ss<<in_str;
-    // TriLLNode<char>* yayaya = llbt.getHead();
-    // llbt.inputPreOrd(in_ss, yayaya);
-    // cout<<llbt.getLeafNum(yayaya)<<endl;
+    LLBinarySearchTree<int> llbst;
+    string in_str;
+    std::getline(std::cin, in_str);
+    // cout<<in_str<<endl;
+    stringstream in_ss;
+    in_ss<<in_str;
 
-    char vlr[233];
-    char lvr[233];
-    cin>>vlr;
-    cin>>lvr;
-    llbt.inputPreAndMid(vlr, lvr, strlen(vlr));
-    TriLLNode<char>* yayaya = llbt.getHead();
-    llbt.outputTaiOrd(yayaya);
+    TriLLNode<int>* yayaya = llbst.getHead();
+    llbst.inputPreOrd(in_ss, yayaya);
+    // llbst.outputTaiOrd(yayaya);
+    if (llbst.IsSearchTree(yayaya)) {
+        cout<<"yes"<<endl;
+    }
+    else {
+        cout<<"no"<<endl;
+    }
+
+    // LLBinaryTree<char> llbt;
+    // // string in_str;
+    // // stringstream in_ss;
+    // // cin>>in_str;
+    // // in_ss<<in_str;
+    // // TriLLNode<char>* yayaya = llbt.getHead();
+    // // llbt.inputPreOrd(in_ss, yayaya);
+    // // cout<<llbt.getLeafNum(yayaya)<<endl;
+
+    // char vlr[233];
+    // char lvr[233];
+    // cin>>vlr;
+    // cin>>lvr;
+    // llbt.inputPreAndMid(vlr, lvr, strlen(vlr));
+    // TriLLNode<char>* yayaya = llbt.getHead();
+    // llbt.outputTaiOrd(yayaya);
     // Heap hp(20);
     // HeapNode t;
 
