@@ -11,18 +11,26 @@
 // #include "HuffmanTree.h"
 // #include "Heap_v2.h"
 #include "LLBinaryTree.h"
+#include <cstring>
 
 
 int main(int argc, char const *argv[]) {
     LLBinaryTree<char> llbt;
-    string in_str;
-    stringstream in_ss;
-    cin>>in_str;
-    in_ss<<in_str;
+    // string in_str;
+    // stringstream in_ss;
+    // cin>>in_str;
+    // in_ss<<in_str;
+    // TriLLNode<char>* yayaya = llbt.getHead();
+    // llbt.inputPreOrd(in_ss, yayaya);
+    // cout<<llbt.getLeafNum(yayaya)<<endl;
+
+    char vlr[233];
+    char lvr[233];
+    cin>>vlr;
+    cin>>lvr;
+    llbt.inputPreAndMid(vlr, lvr, strlen(vlr));
     TriLLNode<char>* yayaya = llbt.getHead();
-    llbt.inputPreOrd(in_ss, yayaya);
-    cout<<llbt.getLeafNum(yayaya)<<endl;
-    llbt.outputMidOrd(yayaya);
+    llbt.outputTaiOrd(yayaya);
     // Heap hp(20);
     // HeapNode t;
 

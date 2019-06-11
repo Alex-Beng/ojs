@@ -31,9 +31,14 @@ public:
     LLBinaryTree();
     ~LLBinaryTree();
     void inputPreOrd(stringstream& in, TriLLNode<T>* &sub_tree);
+    TriLLNode<T>* inputPreAndMid(T* vlr, T* lvr, int n);
     void outputMidOrd(TriLLNode<T>* sub_tree);
+    void outputTaiOrd(TriLLNode<T>* sub_tree);
+    
+
     int getLeafNum(TriLLNode<T>* sub_tree);
     TriLLNode<T>* getHead();
+    
 private:
     TriLLNode<T>* root;
 };
@@ -79,6 +84,22 @@ void LLBinaryTree<T>::inputPreOrd(stringstream& in, TriLLNode<T>* &sub_tree) {
 }
 
 template<class T>
+TriLLNode<T>* LLBinaryTree<T>::inputPreAndMid(T* vlr, T* lvr, int n) {
+    if (n == 0) {
+        return NULL;
+    }
+    int k = 0;
+    while (vlr[0] != lvr[k]) {
+        k++;
+    }
+    TriLLNode<T>* t = new TriLLNode<T>(vlr[0]);
+    t->l_child = inputPreAndMid(vlr+1, lvr, k);
+    t->r_child = inputPreAndMid(vlr+k+1, lvr+k+1, n-k-1);
+    root = t;
+    return t;
+}
+
+template<class T>
 void LLBinaryTree<T>::outputMidOrd(TriLLNode<T>* sub_tree) {
     if (sub_tree != NULL) {
         T node_data = sub_tree->data;
@@ -87,6 +108,18 @@ void LLBinaryTree<T>::outputMidOrd(TriLLNode<T>* sub_tree) {
         outputMidOrd(sub_tree->r_child);
     }
 }
+
+
+template<class T>
+void LLBinaryTree<T>::outputTaiOrd(TriLLNode<T>* sub_tree) {
+    if (sub_tree != NULL) {
+        T node_data = sub_tree->data;
+        outputTaiOrd(sub_tree->l_child);
+        outputTaiOrd(sub_tree->r_child);
+        cout<<node_data;
+    }
+}
+
 
 template<class T>
 int LLBinaryTree<T>::getLeafNum(TriLLNode<T>* sub_tree) {
