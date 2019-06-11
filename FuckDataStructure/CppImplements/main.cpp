@@ -9,51 +9,61 @@
 // #include "GenList.h"
 // #include "MinHeap.h"
 // #include "HuffmanTree.h"
-#include "Heap_v2.h"
+// #include "Heap_v2.h"
+#include "LLBinaryTree.h"
+
 
 int main(int argc, char const *argv[]) {
-    Heap hp(20);
-    HeapNode t;
+    LLBinaryTree<char> llbt;
+    string in_str;
+    stringstream in_ss;
+    cin>>in_str;
+    in_ss<<in_str;
+    TriLLNode<char>* yayaya = llbt.getHead();
+    llbt.inputPreOrd(in_ss, yayaya);
+    cout<<llbt.getLeafNum(yayaya)<<endl;
+    // Heap hp(20);
+    // HeapNode t;
 
-    t.data = 1;
-    hp.Insert(t);
+    // t.data = 1;
+    // hp.Insert(t);
 
-    t.data = 5;
-    hp.Insert(t);
+    // t.data = 5;
+    // hp.Insert(t);
 
-    t.data = 2;
-    hp.Insert(t);
+    // t.data = 2;
+    // hp.Insert(t);
 
-    t.data = 7;
-    hp.Insert(t);
+    // t.data = 7;
+    // hp.Insert(t);
 
-    t.data = 9;
-    hp.Insert(t);
+    // t.data = 9;
+    // hp.Insert(t);
 
-    t.data = 90;
-    hp.Insert(t);
+    // t.data = 90;
+    // hp.Insert(t);
 
-    t.data = 2;
-    hp.Insert(t);
+    // t.data = 2;
+    // hp.Insert(t);
 
-    t.data = 4;
-    hp.Insert(t);
+    // t.data = 4;
+    // hp.Insert(t);
 
-    t.data = 3;
-    hp.Insert(t);
+    // t.data = 3;
+    // hp.Insert(t);
 
-    for (int i=0; i<hp.current_size; i++) {
-        cout<<hp.heap[i].data<<' ';
-    }
-    cout<<endl;
+    // for (int i=0; i<hp.current_size; i++) {
+    //     cout<<hp.heap[i].data<<' ';
+    // }
+    // cout<<endl;
 
-    hp.RemoveMin();
+    // hp.RemoveMin();
 
-    for (int i=0; i<hp.current_size; i++) {
-        cout<<hp.heap[i].data<<' ';
-    }
+    // for (int i=0; i<hp.current_size; i++) {
+    //     cout<<hp.heap[i].data<<' ';
+    // }
 
-    return 0;
+    // return 0;
 
     // MinHeap<int> t;
     // t.Insert(9);
