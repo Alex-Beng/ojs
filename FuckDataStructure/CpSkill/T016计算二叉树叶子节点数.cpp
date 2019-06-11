@@ -1,8 +1,6 @@
-/**
- * 链表储存的二叉树
- */
-#ifndef LL_BINARY_TREE_H
-#define LL_BINARY_TREE_H
+/*
+ABD##EH###CF#I##G##
+*/
 
 #include <string>
 #include <sstream>
@@ -36,6 +34,21 @@ public:
 private:
     TriLLNode<T>* root;
 };
+
+int main(int argc, char const *argv[]) {
+    LLBinaryTree<char> llbt;
+    string in_str;
+    stringstream in_ss;
+    cin>>in_str;
+    in_ss<<in_str;
+    TriLLNode<char>* yayaya = llbt.getHead();
+    llbt.inputPreOrd(in_ss, yayaya);
+    cout<<llbt.getLeafNum(yayaya)<<endl;
+
+    return 0;
+}
+
+
 
 template<class T>
 LLBinaryTree<T>::LLBinaryTree() {
@@ -95,5 +108,3 @@ template<class T>
 TriLLNode<T>* LLBinaryTree<T>::getHead() {
     return root;
 }
-
-#endif
