@@ -25,13 +25,23 @@ int main(int argc, char const *argv[]) {
 
     TriLLNode<int>* yayaya = llbst.getHead();
     llbst.inputPreOrd(in_ss, yayaya);
+
+    int* result;
+    result = new int[10];
+    int cnt = 0;
+    llbst.Search(yayaya, 10, 17, result, cnt);
+    for (int i=0; i<cnt; i++) {
+        cout<<result[i]<<' ';
+    }
+    cout<<endl;
+
     // llbst.outputTaiOrd(yayaya);
-    if (llbst.IsSearchTree(yayaya)) {
-        cout<<"yes"<<endl;
-    }
-    else {
-        cout<<"no"<<endl;
-    }
+    // if (llbst.IsSearchTree(yayaya)) {
+    //     cout<<"yes"<<endl;
+    // }
+    // else {
+    //     cout<<"no"<<endl;
+    // }
 
     // LLBinaryTree<char> llbt;
     // // string in_str;

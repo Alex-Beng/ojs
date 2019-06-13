@@ -24,7 +24,11 @@ public:
 
     bool IsSearchTree(TriLLNode<T>* sub_tree);
     TriLLNode<T>* getHead();
-    
+
+    // 查找上下限之间的结点
+    void Search(TriLLNode<T>* sub_tree, T min, T max, T* &result, int& result_count);
+    // 查找s_value    
+    bool Search(TriLLNode<T>* sub_tree, T s_value);
 private:
     TriLLNode<T>* root;
 };
@@ -132,5 +136,34 @@ template<class T>
 TriLLNode<T>* LLBinarySearchTree<T>::getHead() {
     return root;
 }
+
+template<class T>
+void LLBinarySearchTree<T>::Search(TriLLNode<T>* sub_tree, T min, T max, T* &result, int& result_count) {
+    if (sub_tree == NULL) {// 来到一个空子树，再见了您那
+        return;
+    }
+    else {
+        if (min<sub_tree->data && sub_tree->data<max) {
+            result[result_count++] = sub_tree->data;
+        }
+        Search(sub_tree->l_child, min, max, result, result_count);
+        Search(sub_tree->r_child, min, max, result, result_count);
+    }
+}
+
+template<class T>
+bool LLBinarySearchTree<T>::Search(TriLLNode<T>* sub_tree, T s_value) {
+    T* t_result;
+    int cnt;
+    t_result = new T[233];
+    Search(sub_tree, s_value, s_value, t_result, cnt);
+    if (cnt >= 1) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
 
 #endif
