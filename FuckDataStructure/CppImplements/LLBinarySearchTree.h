@@ -30,6 +30,7 @@ public:
     bool Search(TriLLNode<T>* sub_tree, T s_value);
     void Insert(TriLLNode<T>* &sub_tree, T in_value);
     void Remove(TriLLNode<T>* &sub_tree, T rm_value);
+    void Merge(TriLLNode<T>* &sub_tree, LLBinarySearchTree<T>& another_tree);
 private:
     TriLLNode<T>* root;
 };
@@ -209,6 +210,18 @@ void LLBinarySearchTree<T>::Remove(TriLLNode<T>* &sub_tree, T rm_value) {
                 delete t_ptr;
             }
         }
+    }
+}
+
+template<class T>
+void LLBinarySearchTree<T>::Merge(TriLLNode<T>* &sub_tree, LLBinarySearchTree<T>& another_tree) {
+    TriLLNode<T>* yayaya = another_tree.getHead();
+    if (sub_tree != NULL) {
+        T node_data = sub_tree->data;
+        outputMidOrd(sub_tree->l_child);
+        another_tree.Insert(yayaya, sub_tree->data);
+        cout<<"yayaya"<<sub_tree->data<<endl;
+        outputMidOrd(sub_tree->r_child);
     }
 }
 

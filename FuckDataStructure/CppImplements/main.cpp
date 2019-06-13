@@ -26,25 +26,44 @@ int main(int argc, char const *argv[]) {
     TriLLNode<int>* yayaya = llbst.getHead();
     llbst.inputPreOrd(in_ss, yayaya);
 
-    int* result;
-    result = new int[10];
-    int cnt = 0;
-    llbst.Search(yayaya, 10, 17, result, cnt);
-    for (int i=0; i<cnt; i++) {
-        cout<<result[i]<<' ';
+    // LLBinarySearchTree<int> llbst2;
+    string in_str2;
+    std::getline(std::cin, in_str2);
+    // cout<<in_str<<endl;
+    stringstream in_ss2;
+    in_ss2<<in_str2;
+
+    int t;
+    while (!in_ss2.eof()) {
+        in_ss2>>t;
+        if (t != -1) {
+            llbst.Insert(yayaya, t);
+        }        
     }
-    cout<<endl;
-
-    llbst.Insert(yayaya, 3);
-    llbst.Insert(yayaya, 3);
-    llbst.Insert(yayaya, 19);
-    llbst.Insert(yayaya, 18);
     llbst.outputMidOrd(yayaya);
     cout<<endl;
 
-    llbst.Remove(yayaya, 10);
-    llbst.Remove(yayaya, 3);
-    llbst.outputMidOrd(yayaya);
+    // llbst.outputMidOrd(yayaya);
+
+    // int* result;
+    // result = new int[10];
+    // int cnt = 0;
+    // llbst.Search(yayaya, 10, 17, result, cnt);
+    // for (int i=0; i<cnt; i++) {
+    //     cout<<result[i]<<' ';
+    // }
+    // cout<<endl;
+
+    // llbst.Insert(yayaya, 3);
+    // llbst.Insert(yayaya, 3);
+    // llbst.Insert(yayaya, 19);
+    // llbst.Insert(yayaya, 18);
+    // llbst.outputMidOrd(yayaya);
+    // cout<<endl;
+
+    // llbst.Remove(yayaya, 10);
+    // llbst.Remove(yayaya, 3);
+    // llbst.outputMidOrd(yayaya);
 
 
 
