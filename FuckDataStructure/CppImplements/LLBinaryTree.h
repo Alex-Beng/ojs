@@ -18,6 +18,8 @@ struct TriLLNode {
     }
     TriLLNode(T t_data) {
         data = t_data;
+        l_child = NULL;
+        r_child = NULL;
     }
     T data;
     TriLLNode<T>* l_child;

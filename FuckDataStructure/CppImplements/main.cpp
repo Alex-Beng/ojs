@@ -35,6 +35,20 @@ int main(int argc, char const *argv[]) {
     }
     cout<<endl;
 
+    llbst.Insert(yayaya, 3);
+    llbst.Insert(yayaya, 3);
+    llbst.Insert(yayaya, 19);
+    llbst.Insert(yayaya, 18);
+    llbst.outputMidOrd(yayaya);
+    cout<<endl;
+
+    llbst.Remove(yayaya, 10);
+    llbst.Remove(yayaya, 3);
+    llbst.outputMidOrd(yayaya);
+
+
+
+
     // llbst.outputTaiOrd(yayaya);
     // if (llbst.IsSearchTree(yayaya)) {
     //     cout<<"yes"<<endl;
