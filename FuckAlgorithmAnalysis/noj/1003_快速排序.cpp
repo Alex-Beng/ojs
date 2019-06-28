@@ -14,6 +14,7 @@ void quick_sort(int head, int tail, int *num) {
 }
 
 int partition(int head, int tail, int pivot_point, int *num) {
+    int t = tail;
     int pivot_num = num[pivot_point];
     while (head < tail) {
         while (head < tail && num[tail] >= pivot_num) tail--;
@@ -33,7 +34,8 @@ int main(int argc, char const *argv[]) {
     for (int i=0; i<n; i++) {
         cin>>num[i];
     }
-    quick_sort(0, n-1, num);
+    // quick_sort(0, n-1, num);
+    partition(0, n-1, 0, num);
     for (int i=0; i<n; i++) {
         cout<<num[i]<<endl;
     }
