@@ -2,6 +2,8 @@
 using namespace std;
 
 int main(int argc, char const *argv[]) {
+    int n; 
+    cin>>n;
     for (int i=10; i<100; i++) {
         int cnt=0;
         for (int j=1; j<i; j++) {
@@ -9,7 +11,7 @@ int main(int argc, char const *argv[]) {
                 cnt++;
             }
         }
-        if (cnt == 3) {
+        if (cnt == n-1) {
             cout<<i<<endl;
         }
     }
