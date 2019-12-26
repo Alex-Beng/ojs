@@ -2,7 +2,7 @@
 using namespace std;
 
 int main(int argc, char const *argv[]) {
-    long long int ans[66];
+    long long int ans[66]; // 注意long long
     int n;
     cin>>n;
     for (int i=0; i<n; i++) {
