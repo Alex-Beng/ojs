@@ -56,7 +56,7 @@ int main()
 /* 你的代码将被嵌在这里 */
 List MakeEmpty() {
     // List t = new LNode;
-    List t = (List)malloc(sizeof(struct LNode));;
+    List t = (List)malloc(sizeof(struct LNode));
     t->Last = -1;
     return t;
 }
