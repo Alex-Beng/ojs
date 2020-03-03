@@ -1,0 +1,479 @@
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+ no time accumulated
+
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls  Ts/call  Ts/call  name    
+  0.00      0.00     0.00     6403     0.00     0.00  std::less<int>::operator()(int const&, int const&) const
+  0.00      0.00     0.00     5765     0.00     0.00  std::_Select1st<std::pair<int const, int> >::operator()(std::pair<int const, int> const&) const
+  0.00      0.00     0.00     5604     0.00     0.00  std::_Rb_tree_node<std::pair<int const, int> >::_M_valptr() const
+  0.00      0.00     0.00     5604     0.00     0.00  std::pair<int const, int> const* std::__addressof<std::pair<int const, int> const>(std::pair<int const, int> const&)
+  0.00      0.00     0.00     5364     0.00     0.00  std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_S_key(std::_Rb_tree_node<std::pair<int const, int> > const*)
+  0.00      0.00     0.00     5364     0.00     0.00  std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_S_value(std::_Rb_tree_node<std::pair<int const, int> > const*)
+  0.00      0.00     0.00     2949     0.00     0.00  std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_S_right(std::_Rb_tree_node_base*)
+  0.00      0.00     0.00     2495     0.00     0.00  std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_S_left(std::_Rb_tree_node_base*)
+  0.00      0.00     0.00     1838     0.00     0.00  std::_Rb_tree_iterator<std::pair<int const, int> >::_Rb_tree_iterator(std::_Rb_tree_node<std::pair<int const, int> >*)
+  0.00      0.00     0.00     1717     0.00     0.00  std::_Rb_tree_node<std::pair<int const, int> >::_M_valptr()
+  0.00      0.00     0.00     1717     0.00     0.00  std::pair<int const, int>* std::__addressof<std::pair<int const, int> >(std::pair<int const, int>&)
+  0.00      0.00     0.00     1617     0.00     0.00  std::_Rb_tree_iterator<std::pair<int const, int> >::operator*() const
+  0.00      0.00     0.00      981     0.00     0.00  std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_M_end()
+  0.00      0.00     0.00      819     0.00     0.00  std::_Rb_tree_iterator<std::pair<int const, int> >::operator==(std::_Rb_tree_iterator<std::pair<int const, int> > const&) const
+  0.00      0.00     0.00      819     0.00     0.00  std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_M_begin()
+  0.00      0.00     0.00      818     0.00     0.00  std::map<int, int, std::less<int>, std::allocator<std::pair<int const, int> > >::lower_bound(int const&)
+  0.00      0.00     0.00      818     0.00     0.00  std::map<int, int, std::less<int>, std::allocator<std::pair<int const, int> > >::end()
+  0.00      0.00     0.00      818     0.00     0.00  std::map<int, int, std::less<int>, std::allocator<std::pair<int const, int> > >::operator[](int const&)
+  0.00      0.00     0.00      818     0.00     0.00  std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::lower_bound(int const&)
+  0.00      0.00     0.00      818     0.00     0.00  std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_M_lower_bound(std::_Rb_tree_node<std::pair<int const, int> >*, std::_Rb_tree_node<std::pair<int const, int> >*, int const&)
+  0.00      0.00     0.00      818     0.00     0.00  std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::end()
+  0.00      0.00     0.00      799     0.00     0.00  std::map<int, int, std::less<int>, std::allocator<std::pair<int const, int> > >::key_comp() const
+  0.00      0.00     0.00      799     0.00     0.00  std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::key_comp() const
+  0.00      0.00     0.00      240     0.00     0.00  std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_S_key(std::_Rb_tree_node_base const*)
+  0.00      0.00     0.00      240     0.00     0.00  std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_S_value(std::_Rb_tree_node_base const*)
+  0.00      0.00     0.00      100     0.00     0.00  __gnu_cxx::new_allocator<std::_Rb_tree_node<std::pair<int const, int> > >::allocate(unsigned int, void const*)
+  0.00      0.00     0.00      100     0.00     0.00  __gnu_cxx::new_allocator<std::pair<int const, int> >::construct(std::pair<int const, int>*, std::pair<int const, int> const&)
+  0.00      0.00     0.00      100     0.00     0.00  __gnu_cxx::new_allocator<std::pair<int const, int> >::new_allocator()
+  0.00      0.00     0.00      100     0.00     0.00  __gnu_cxx::new_allocator<std::pair<int const, int> >::~new_allocator()
+  0.00      0.00     0.00      100     0.00     0.00  __gnu_cxx::__alloc_traits<std::allocator<std::_Rb_tree_node<std::pair<int const, int> > > >::allocate(std::allocator<std::_Rb_tree_node<std::pair<int const, int> > >&, unsigned int)
+  0.00      0.00     0.00      100     0.00     0.00  __gnu_cxx::new_allocator<std::_Rb_tree_node<std::pair<int const, int> > >::max_size() const
+  0.00      0.00     0.00      100     0.00     0.00  std::_Rb_tree_const_iterator<std::pair<int const, int> >::_M_const_cast() const
+  0.00      0.00     0.00      100     0.00     0.00  std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::get_allocator() const
+  0.00      0.00     0.00      100     0.00     0.00  std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_M_get_Node_allocator() const
+  0.00      0.00     0.00      100     0.00     0.00  std::allocator<std::pair<int const, int> >::allocator<std::_Rb_tree_node<std::pair<int const, int> > >(std::allocator<std::_Rb_tree_node<std::pair<int const, int> > > const&)
+  0.00      0.00     0.00      100     0.00     0.00  std::allocator<std::pair<int const, int> >::~allocator()
+  0.00      0.00     0.00      100     0.00     0.00  std::_Rb_tree_const_iterator<std::pair<int const, int> >::_Rb_tree_const_iterator(std::_Rb_tree_iterator<std::pair<int const, int> > const&)
+  0.00      0.00     0.00      100     0.00     0.00  std::map<int, int, std::less<int>, std::allocator<std::pair<int const, int> > >::insert(std::_Rb_tree_iterator<std::pair<int const, int> >, std::pair<int const, int> const&)
+  0.00      0.00     0.00      100     0.00     0.00  std::pair<int const, int>::pair(int const&, int const&)
+  0.00      0.00     0.00      100     0.00     0.00  std::pair<std::_Rb_tree_node_base*, std::_Rb_tree_node_base*>::pair(std::_Rb_tree_node_base* const&, std::_Rb_tree_node_base* const&)
+  0.00      0.00     0.00      100     0.00     0.00  std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_M_insert_(std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, std::pair<int const, int> const&)
+  0.00      0.00     0.00      100     0.00     0.00  std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_M_get_node()
+  0.00      0.00     0.00      100     0.00     0.00  std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_M_create_node(std::pair<int const, int> const&)
+  0.00      0.00     0.00      100     0.00     0.00  std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_M_insert_unique_(std::_Rb_tree_const_iterator<std::pair<int const, int> >, std::pair<int const, int> const&)
+  0.00      0.00     0.00      100     0.00     0.00  std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_M_get_Node_allocator()
+  0.00      0.00     0.00      100     0.00     0.00  std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_M_get_insert_hint_unique_pos(std::_Rb_tree_const_iterator<std::pair<int const, int> >, int const&)
+  0.00      0.00     0.00      100     0.00     0.00  operator new(unsigned int, void*)
+  0.00      0.00     0.00       83     0.00     0.00  std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_M_leftmost()
+  0.00      0.00     0.00       80     0.00     0.00  std::_Rb_tree_iterator<std::pair<int const, int> >::operator--()
+  0.00      0.00     0.00       36     0.00     0.00  std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_M_rightmost()
+  0.00      0.00     0.00       19     0.00     0.00  std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::size() const
+  0.00      0.00     0.00       10     0.00     0.00  dfs(int, int)
+  0.00      0.00     0.00       10     0.00     0.00  set_node(bool)
+  0.00      0.00     0.00       10     0.00     0.00  __gcc_deregister_frame
+  0.00      0.00     0.00        1     0.00     0.00  std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_M_get_insert_unique_pos(int const&)
+  0.00      0.00     0.00        1     0.00     0.00  std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::begin()
+
+ %         the percentage of the total running time of the
+time       program used by this function.
+
+cumulative a running sum of the number of seconds accounted
+ seconds   for by this function and those listed above it.
+
+ self      the number of seconds accounted for by this
+seconds    function alone.  This is the major sort for this
+           listing.
+
+calls      the number of times this function was invoked, if
+           this function is profiled, else blank.
+ 
+ self      the average number of milliseconds spent in this
+ms/call    function per call, if this function is profiled,
+	   else blank.
+
+ total     the average number of milliseconds spent in this
+ms/call    function and its descendents per call, if this 
+	   function is profiled, else blank.
+
+name       the name of the function.  This is the minor sort
+           for this listing. The index shows the location of
+	   the function in the gprof listing. If the index is
+	   in parenthesis it shows where it would appear in
+	   the gprof listing if it were to be printed.
+
+Copyright (C) 2012 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+		     Call graph (explanation follows)
+
+
+granularity: each sample hit covers 4 byte(s) no time propagated
+
+index % time    self  children    called     name
+                0.00    0.00      61/6403        std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_M_insert_(std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, std::pair<int const, int> const&) [42]
+                0.00    0.00     179/6403        std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_M_get_insert_hint_unique_pos(std::_Rb_tree_const_iterator<std::pair<int const, int> >, int const&) [47]
+                0.00    0.00     799/6403        std::map<int, int, std::less<int>, std::allocator<std::pair<int const, int> > >::operator[](int const&) [19]
+                0.00    0.00    5364/6403        std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_M_lower_bound(std::_Rb_tree_node<std::pair<int const, int> >*, std::_Rb_tree_node<std::pair<int const, int> >*, int const&) [21]
+[2]      0.0    0.00    0.00    6403         std::less<int>::operator()(int const&, int const&) const [2]
+-----------------------------------------------
+                0.00    0.00      61/5765        std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_M_insert_(std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, std::pair<int const, int> const&) [42]
+                0.00    0.00     100/5765        std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_M_insert_unique_(std::_Rb_tree_const_iterator<std::pair<int const, int> >, std::pair<int const, int> const&) [45]
+                0.00    0.00     240/5765        std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_S_key(std::_Rb_tree_node_base const*) [25]
+                0.00    0.00    5364/5765        std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_S_key(std::_Rb_tree_node<std::pair<int const, int> > const*) [6]
+[3]      0.0    0.00    0.00    5765         std::_Select1st<std::pair<int const, int> >::operator()(std::pair<int const, int> const&) const [3]
+-----------------------------------------------
+                0.00    0.00     240/5604        std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_S_value(std::_Rb_tree_node_base const*) [26]
+                0.00    0.00    5364/5604        std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_S_value(std::_Rb_tree_node<std::pair<int const, int> > const*) [7]
+[4]      0.0    0.00    0.00    5604         std::_Rb_tree_node<std::pair<int const, int> >::_M_valptr() const [4]
+                0.00    0.00    5604/5604        std::pair<int const, int> const* std::__addressof<std::pair<int const, int> const>(std::pair<int const, int> const&) [5]
+-----------------------------------------------
+                0.00    0.00    5604/5604        std::_Rb_tree_node<std::pair<int const, int> >::_M_valptr() const [4]
+[5]      0.0    0.00    0.00    5604         std::pair<int const, int> const* std::__addressof<std::pair<int const, int> const>(std::pair<int const, int> const&) [5]
+-----------------------------------------------
+                0.00    0.00    5364/5364        std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_M_lower_bound(std::_Rb_tree_node<std::pair<int const, int> >*, std::_Rb_tree_node<std::pair<int const, int> >*, int const&) [21]
+[6]      0.0    0.00    0.00    5364         std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_S_key(std::_Rb_tree_node<std::pair<int const, int> > const*) [6]
+                0.00    0.00    5364/5364        std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_S_value(std::_Rb_tree_node<std::pair<int const, int> > const*) [7]
+                0.00    0.00    5364/5765        std::_Select1st<std::pair<int const, int> >::operator()(std::pair<int const, int> const&) const [3]
+-----------------------------------------------
+                0.00    0.00    5364/5364        std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_S_key(std::_Rb_tree_node<std::pair<int const, int> > const*) [6]
+[7]      0.0    0.00    0.00    5364         std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_S_value(std::_Rb_tree_node<std::pair<int const, int> > const*) [7]
+                0.00    0.00    5364/5604        std::_Rb_tree_node<std::pair<int const, int> >::_M_valptr() const [4]
+-----------------------------------------------
+                0.00    0.00      80/2949        std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_M_get_insert_hint_unique_pos(std::_Rb_tree_const_iterator<std::pair<int const, int> >, int const&) [47]
+                0.00    0.00    2869/2949        std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_M_lower_bound(std::_Rb_tree_node<std::pair<int const, int> >*, std::_Rb_tree_node<std::pair<int const, int> >*, int const&) [21]
+[8]      0.0    0.00    0.00    2949         std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_S_right(std::_Rb_tree_node_base*) [8]
+-----------------------------------------------
+                0.00    0.00    2495/2495        std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_M_lower_bound(std::_Rb_tree_node<std::pair<int const, int> >*, std::_Rb_tree_node<std::pair<int const, int> >*, int const&) [21]
+[9]      0.0    0.00    0.00    2495         std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_S_left(std::_Rb_tree_node_base*) [9]
+-----------------------------------------------
+                0.00    0.00       1/1838        std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_M_get_insert_unique_pos(int const&) [56]
+                0.00    0.00       1/1838        std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::begin() [57]
+                0.00    0.00     100/1838        std::_Rb_tree_const_iterator<std::pair<int const, int> >::_M_const_cast() const [33]
+                0.00    0.00     100/1838        std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_M_insert_(std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, std::pair<int const, int> const&) [42]
+                0.00    0.00     818/1838        std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_M_lower_bound(std::_Rb_tree_node<std::pair<int const, int> >*, std::_Rb_tree_node<std::pair<int const, int> >*, int const&) [21]
+                0.00    0.00     818/1838        std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::end() [22]
+[10]     0.0    0.00    0.00    1838         std::_Rb_tree_iterator<std::pair<int const, int> >::_Rb_tree_iterator(std::_Rb_tree_node<std::pair<int const, int> >*) [10]
+-----------------------------------------------
+                0.00    0.00     100/1717        std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_M_create_node(std::pair<int const, int> const&) [44]
+                0.00    0.00    1617/1717        std::_Rb_tree_iterator<std::pair<int const, int> >::operator*() const [13]
+[11]     0.0    0.00    0.00    1717         std::_Rb_tree_node<std::pair<int const, int> >::_M_valptr() [11]
+                0.00    0.00    1717/1717        std::pair<int const, int>* std::__addressof<std::pair<int const, int> >(std::pair<int const, int>&) [12]
+-----------------------------------------------
+                0.00    0.00    1717/1717        std::_Rb_tree_node<std::pair<int const, int> >::_M_valptr() [11]
+[12]     0.0    0.00    0.00    1717         std::pair<int const, int>* std::__addressof<std::pair<int const, int> >(std::pair<int const, int>&) [12]
+-----------------------------------------------
+                0.00    0.00    1617/1617        std::map<int, int, std::less<int>, std::allocator<std::pair<int const, int> > >::operator[](int const&) [19]
+[13]     0.0    0.00    0.00    1617         std::_Rb_tree_iterator<std::pair<int const, int> >::operator*() const [13]
+                0.00    0.00    1617/1717        std::_Rb_tree_node<std::pair<int const, int> >::_M_valptr() [11]
+-----------------------------------------------
+                0.00    0.00       1/981         std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_M_get_insert_unique_pos(int const&) [56]
+                0.00    0.00      62/981         std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_M_insert_(std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, std::pair<int const, int> const&) [42]
+                0.00    0.00     100/981         std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_M_get_insert_hint_unique_pos(std::_Rb_tree_const_iterator<std::pair<int const, int> >, int const&) [47]
+                0.00    0.00     818/981         std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::lower_bound(int const&) [20]
+[14]     0.0    0.00    0.00     981         std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_M_end() [14]
+-----------------------------------------------
+                0.00    0.00       1/819         std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_M_get_insert_unique_pos(int const&) [56]
+                0.00    0.00     818/819         std::map<int, int, std::less<int>, std::allocator<std::pair<int const, int> > >::operator[](int const&) [19]
+[15]     0.0    0.00    0.00     819         std::_Rb_tree_iterator<std::pair<int const, int> >::operator==(std::_Rb_tree_iterator<std::pair<int const, int> > const&) const [15]
+-----------------------------------------------
+                0.00    0.00       1/819         std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_M_get_insert_unique_pos(int const&) [56]
+                0.00    0.00     818/819         std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::lower_bound(int const&) [20]
+[16]     0.0    0.00    0.00     819         std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_M_begin() [16]
+-----------------------------------------------
+                0.00    0.00     818/818         std::map<int, int, std::less<int>, std::allocator<std::pair<int const, int> > >::operator[](int const&) [19]
+[17]     0.0    0.00    0.00     818         std::map<int, int, std::less<int>, std::allocator<std::pair<int const, int> > >::lower_bound(int const&) [17]
+                0.00    0.00     818/818         std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::lower_bound(int const&) [20]
+-----------------------------------------------
+                0.00    0.00     818/818         std::map<int, int, std::less<int>, std::allocator<std::pair<int const, int> > >::operator[](int const&) [19]
+[18]     0.0    0.00    0.00     818         std::map<int, int, std::less<int>, std::allocator<std::pair<int const, int> > >::end() [18]
+                0.00    0.00     818/818         std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::end() [22]
+-----------------------------------------------
+                0.00    0.00      18/818         _fu1___ZSt3cin [175]
+                0.00    0.00     800/818         dfs(int, int) [53]
+[19]     0.0    0.00    0.00     818         std::map<int, int, std::less<int>, std::allocator<std::pair<int const, int> > >::operator[](int const&) [19]
+                0.00    0.00    1617/1617        std::_Rb_tree_iterator<std::pair<int const, int> >::operator*() const [13]
+                0.00    0.00     818/818         std::map<int, int, std::less<int>, std::allocator<std::pair<int const, int> > >::lower_bound(int const&) [17]
+                0.00    0.00     818/818         std::map<int, int, std::less<int>, std::allocator<std::pair<int const, int> > >::end() [18]
+                0.00    0.00     818/819         std::_Rb_tree_iterator<std::pair<int const, int> >::operator==(std::_Rb_tree_iterator<std::pair<int const, int> > const&) const [15]
+                0.00    0.00     799/799         std::map<int, int, std::less<int>, std::allocator<std::pair<int const, int> > >::key_comp() const [23]
+                0.00    0.00     799/6403        std::less<int>::operator()(int const&, int const&) const [2]
+                0.00    0.00     100/100         std::pair<int const, int>::pair(int const&, int const&) [40]
+                0.00    0.00     100/100         std::map<int, int, std::less<int>, std::allocator<std::pair<int const, int> > >::insert(std::_Rb_tree_iterator<std::pair<int const, int> >, std::pair<int const, int> const&) [39]
+-----------------------------------------------
+                0.00    0.00     818/818         std::map<int, int, std::less<int>, std::allocator<std::pair<int const, int> > >::lower_bound(int const&) [17]
+[20]     0.0    0.00    0.00     818         std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::lower_bound(int const&) [20]
+                0.00    0.00     818/981         std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_M_end() [14]
+                0.00    0.00     818/819         std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_M_begin() [16]
+                0.00    0.00     818/818         std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_M_lower_bound(std::_Rb_tree_node<std::pair<int const, int> >*, std::_Rb_tree_node<std::pair<int const, int> >*, int const&) [21]
+-----------------------------------------------
+                0.00    0.00     818/818         std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::lower_bound(int const&) [20]
+[21]     0.0    0.00    0.00     818         std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_M_lower_bound(std::_Rb_tree_node<std::pair<int const, int> >*, std::_Rb_tree_node<std::pair<int const, int> >*, int const&) [21]
+                0.00    0.00    5364/5364        std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_S_key(std::_Rb_tree_node<std::pair<int const, int> > const*) [6]
+                0.00    0.00    5364/6403        std::less<int>::operator()(int const&, int const&) const [2]
+                0.00    0.00    2869/2949        std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_S_right(std::_Rb_tree_node_base*) [8]
+                0.00    0.00    2495/2495        std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_S_left(std::_Rb_tree_node_base*) [9]
+                0.00    0.00     818/1838        std::_Rb_tree_iterator<std::pair<int const, int> >::_Rb_tree_iterator(std::_Rb_tree_node<std::pair<int const, int> >*) [10]
+-----------------------------------------------
+                0.00    0.00     818/818         std::map<int, int, std::less<int>, std::allocator<std::pair<int const, int> > >::end() [18]
+[22]     0.0    0.00    0.00     818         std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::end() [22]
+                0.00    0.00     818/1838        std::_Rb_tree_iterator<std::pair<int const, int> >::_Rb_tree_iterator(std::_Rb_tree_node<std::pair<int const, int> >*) [10]
+-----------------------------------------------
+                0.00    0.00     799/799         std::map<int, int, std::less<int>, std::allocator<std::pair<int const, int> > >::operator[](int const&) [19]
+[23]     0.0    0.00    0.00     799         std::map<int, int, std::less<int>, std::allocator<std::pair<int const, int> > >::key_comp() const [23]
+                0.00    0.00     799/799         std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::key_comp() const [24]
+-----------------------------------------------
+                0.00    0.00     799/799         std::map<int, int, std::less<int>, std::allocator<std::pair<int const, int> > >::key_comp() const [23]
+[24]     0.0    0.00    0.00     799         std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::key_comp() const [24]
+-----------------------------------------------
+                0.00    0.00      61/240         std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_M_insert_(std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, std::pair<int const, int> const&) [42]
+                0.00    0.00     179/240         std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_M_get_insert_hint_unique_pos(std::_Rb_tree_const_iterator<std::pair<int const, int> >, int const&) [47]
+[25]     0.0    0.00    0.00     240         std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_S_key(std::_Rb_tree_node_base const*) [25]
+                0.00    0.00     240/240         std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_S_value(std::_Rb_tree_node_base const*) [26]
+                0.00    0.00     240/5765        std::_Select1st<std::pair<int const, int> >::operator()(std::pair<int const, int> const&) const [3]
+-----------------------------------------------
+                0.00    0.00     240/240         std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_S_key(std::_Rb_tree_node_base const*) [25]
+[26]     0.0    0.00    0.00     240         std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_S_value(std::_Rb_tree_node_base const*) [26]
+                0.00    0.00     240/5604        std::_Rb_tree_node<std::pair<int const, int> >::_M_valptr() const [4]
+-----------------------------------------------
+                0.00    0.00     100/100         __gnu_cxx::__alloc_traits<std::allocator<std::_Rb_tree_node<std::pair<int const, int> > > >::allocate(std::allocator<std::_Rb_tree_node<std::pair<int const, int> > >&, unsigned int) [31]
+[27]     0.0    0.00    0.00     100         __gnu_cxx::new_allocator<std::_Rb_tree_node<std::pair<int const, int> > >::allocate(unsigned int, void const*) [27]
+                0.00    0.00     100/100         __gnu_cxx::new_allocator<std::_Rb_tree_node<std::pair<int const, int> > >::max_size() const [32]
+-----------------------------------------------
+                0.00    0.00     100/100         std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_M_create_node(std::pair<int const, int> const&) [44]
+[28]     0.0    0.00    0.00     100         __gnu_cxx::new_allocator<std::pair<int const, int> >::construct(std::pair<int const, int>*, std::pair<int const, int> const&) [28]
+                0.00    0.00     100/100         operator new(unsigned int, void*) [48]
+-----------------------------------------------
+                0.00    0.00     100/100         std::allocator<std::pair<int const, int> >::allocator<std::_Rb_tree_node<std::pair<int const, int> > >(std::allocator<std::_Rb_tree_node<std::pair<int const, int> > > const&) [36]
+[29]     0.0    0.00    0.00     100         __gnu_cxx::new_allocator<std::pair<int const, int> >::new_allocator() [29]
+-----------------------------------------------
+                0.00    0.00     100/100         std::allocator<std::pair<int const, int> >::~allocator() [37]
+[30]     0.0    0.00    0.00     100         __gnu_cxx::new_allocator<std::pair<int const, int> >::~new_allocator() [30]
+-----------------------------------------------
+                0.00    0.00     100/100         std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_M_get_node() [43]
+[31]     0.0    0.00    0.00     100         __gnu_cxx::__alloc_traits<std::allocator<std::_Rb_tree_node<std::pair<int const, int> > > >::allocate(std::allocator<std::_Rb_tree_node<std::pair<int const, int> > >&, unsigned int) [31]
+                0.00    0.00     100/100         __gnu_cxx::new_allocator<std::_Rb_tree_node<std::pair<int const, int> > >::allocate(unsigned int, void const*) [27]
+-----------------------------------------------
+                0.00    0.00     100/100         __gnu_cxx::new_allocator<std::_Rb_tree_node<std::pair<int const, int> > >::allocate(unsigned int, void const*) [27]
+[32]     0.0    0.00    0.00     100         __gnu_cxx::new_allocator<std::_Rb_tree_node<std::pair<int const, int> > >::max_size() const [32]
+-----------------------------------------------
+                0.00    0.00     100/100         std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_M_get_insert_hint_unique_pos(std::_Rb_tree_const_iterator<std::pair<int const, int> >, int const&) [47]
+[33]     0.0    0.00    0.00     100         std::_Rb_tree_const_iterator<std::pair<int const, int> >::_M_const_cast() const [33]
+                0.00    0.00     100/1838        std::_Rb_tree_iterator<std::pair<int const, int> >::_Rb_tree_iterator(std::_Rb_tree_node<std::pair<int const, int> >*) [10]
+-----------------------------------------------
+                0.00    0.00     100/100         std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_M_create_node(std::pair<int const, int> const&) [44]
+[34]     0.0    0.00    0.00     100         std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::get_allocator() const [34]
+                0.00    0.00     100/100         std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_M_get_Node_allocator() const [35]
+                0.00    0.00     100/100         std::allocator<std::pair<int const, int> >::allocator<std::_Rb_tree_node<std::pair<int const, int> > >(std::allocator<std::_Rb_tree_node<std::pair<int const, int> > > const&) [36]
+-----------------------------------------------
+                0.00    0.00     100/100         std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::get_allocator() const [34]
+[35]     0.0    0.00    0.00     100         std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_M_get_Node_allocator() const [35]
+-----------------------------------------------
+                0.00    0.00     100/100         std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::get_allocator() const [34]
+[36]     0.0    0.00    0.00     100         std::allocator<std::pair<int const, int> >::allocator<std::_Rb_tree_node<std::pair<int const, int> > >(std::allocator<std::_Rb_tree_node<std::pair<int const, int> > > const&) [36]
+                0.00    0.00     100/100         __gnu_cxx::new_allocator<std::pair<int const, int> >::new_allocator() [29]
+-----------------------------------------------
+                0.00    0.00     100/100         std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_M_create_node(std::pair<int const, int> const&) [44]
+[37]     0.0    0.00    0.00     100         std::allocator<std::pair<int const, int> >::~allocator() [37]
+                0.00    0.00     100/100         __gnu_cxx::new_allocator<std::pair<int const, int> >::~new_allocator() [30]
+-----------------------------------------------
+                0.00    0.00     100/100         std::map<int, int, std::less<int>, std::allocator<std::pair<int const, int> > >::insert(std::_Rb_tree_iterator<std::pair<int const, int> >, std::pair<int const, int> const&) [39]
+[38]     0.0    0.00    0.00     100         std::_Rb_tree_const_iterator<std::pair<int const, int> >::_Rb_tree_const_iterator(std::_Rb_tree_iterator<std::pair<int const, int> > const&) [38]
+-----------------------------------------------
+                0.00    0.00     100/100         std::map<int, int, std::less<int>, std::allocator<std::pair<int const, int> > >::operator[](int const&) [19]
+[39]     0.0    0.00    0.00     100         std::map<int, int, std::less<int>, std::allocator<std::pair<int const, int> > >::insert(std::_Rb_tree_iterator<std::pair<int const, int> >, std::pair<int const, int> const&) [39]
+                0.00    0.00     100/100         std::_Rb_tree_const_iterator<std::pair<int const, int> >::_Rb_tree_const_iterator(std::_Rb_tree_iterator<std::pair<int const, int> > const&) [38]
+                0.00    0.00     100/100         std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_M_insert_unique_(std::_Rb_tree_const_iterator<std::pair<int const, int> >, std::pair<int const, int> const&) [45]
+-----------------------------------------------
+                0.00    0.00     100/100         std::map<int, int, std::less<int>, std::allocator<std::pair<int const, int> > >::operator[](int const&) [19]
+[40]     0.0    0.00    0.00     100         std::pair<int const, int>::pair(int const&, int const&) [40]
+-----------------------------------------------
+                0.00    0.00       1/100         std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_M_get_insert_unique_pos(int const&) [56]
+                0.00    0.00      99/100         std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_M_get_insert_hint_unique_pos(std::_Rb_tree_const_iterator<std::pair<int const, int> >, int const&) [47]
+[41]     0.0    0.00    0.00     100         std::pair<std::_Rb_tree_node_base*, std::_Rb_tree_node_base*>::pair(std::_Rb_tree_node_base* const&, std::_Rb_tree_node_base* const&) [41]
+-----------------------------------------------
+                0.00    0.00     100/100         std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_M_insert_unique_(std::_Rb_tree_const_iterator<std::pair<int const, int> >, std::pair<int const, int> const&) [45]
+[42]     0.0    0.00    0.00     100         std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_M_insert_(std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, std::pair<int const, int> const&) [42]
+                0.00    0.00     100/100         std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_M_create_node(std::pair<int const, int> const&) [44]
+                0.00    0.00     100/1838        std::_Rb_tree_iterator<std::pair<int const, int> >::_Rb_tree_iterator(std::_Rb_tree_node<std::pair<int const, int> >*) [10]
+                0.00    0.00      62/981         std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_M_end() [14]
+                0.00    0.00      61/240         std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_S_key(std::_Rb_tree_node_base const*) [25]
+                0.00    0.00      61/5765        std::_Select1st<std::pair<int const, int> >::operator()(std::pair<int const, int> const&) const [3]
+                0.00    0.00      61/6403        std::less<int>::operator()(int const&, int const&) const [2]
+-----------------------------------------------
+                0.00    0.00     100/100         std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_M_create_node(std::pair<int const, int> const&) [44]
+[43]     0.0    0.00    0.00     100         std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_M_get_node() [43]
+                0.00    0.00     100/100         std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_M_get_Node_allocator() [46]
+                0.00    0.00     100/100         __gnu_cxx::__alloc_traits<std::allocator<std::_Rb_tree_node<std::pair<int const, int> > > >::allocate(std::allocator<std::_Rb_tree_node<std::pair<int const, int> > >&, unsigned int) [31]
+-----------------------------------------------
+                0.00    0.00     100/100         std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_M_insert_(std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, std::pair<int const, int> const&) [42]
+[44]     0.0    0.00    0.00     100         std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_M_create_node(std::pair<int const, int> const&) [44]
+                0.00    0.00     100/100         std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_M_get_node() [43]
+                0.00    0.00     100/1717        std::_Rb_tree_node<std::pair<int const, int> >::_M_valptr() [11]
+                0.00    0.00     100/100         std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::get_allocator() const [34]
+                0.00    0.00     100/100         __gnu_cxx::new_allocator<std::pair<int const, int> >::construct(std::pair<int const, int>*, std::pair<int const, int> const&) [28]
+                0.00    0.00     100/100         std::allocator<std::pair<int const, int> >::~allocator() [37]
+-----------------------------------------------
+                0.00    0.00     100/100         std::map<int, int, std::less<int>, std::allocator<std::pair<int const, int> > >::insert(std::_Rb_tree_iterator<std::pair<int const, int> >, std::pair<int const, int> const&) [39]
+[45]     0.0    0.00    0.00     100         std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_M_insert_unique_(std::_Rb_tree_const_iterator<std::pair<int const, int> >, std::pair<int const, int> const&) [45]
+                0.00    0.00     100/5765        std::_Select1st<std::pair<int const, int> >::operator()(std::pair<int const, int> const&) const [3]
+                0.00    0.00     100/100         std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_M_get_insert_hint_unique_pos(std::_Rb_tree_const_iterator<std::pair<int const, int> >, int const&) [47]
+                0.00    0.00     100/100         std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_M_insert_(std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, std::pair<int const, int> const&) [42]
+-----------------------------------------------
+                0.00    0.00     100/100         std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_M_get_node() [43]
+[46]     0.0    0.00    0.00     100         std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_M_get_Node_allocator() [46]
+-----------------------------------------------
+                0.00    0.00     100/100         std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_M_insert_unique_(std::_Rb_tree_const_iterator<std::pair<int const, int> >, std::pair<int const, int> const&) [45]
+[47]     0.0    0.00    0.00     100         std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_M_get_insert_hint_unique_pos(std::_Rb_tree_const_iterator<std::pair<int const, int> >, int const&) [47]
+                0.00    0.00     179/240         std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_S_key(std::_Rb_tree_node_base const*) [25]
+                0.00    0.00     179/6403        std::less<int>::operator()(int const&, int const&) const [2]
+                0.00    0.00     100/100         std::_Rb_tree_const_iterator<std::pair<int const, int> >::_M_const_cast() const [33]
+                0.00    0.00     100/981         std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_M_end() [14]
+                0.00    0.00      99/100         std::pair<std::_Rb_tree_node_base*, std::_Rb_tree_node_base*>::pair(std::_Rb_tree_node_base* const&, std::_Rb_tree_node_base* const&) [41]
+                0.00    0.00      83/83          std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_M_leftmost() [49]
+                0.00    0.00      80/80          std::_Rb_tree_iterator<std::pair<int const, int> >::operator--() [50]
+                0.00    0.00      80/2949        std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_S_right(std::_Rb_tree_node_base*) [8]
+                0.00    0.00      36/36          std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_M_rightmost() [51]
+                0.00    0.00      19/19          std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::size() const [52]
+                0.00    0.00       1/1           std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_M_get_insert_unique_pos(int const&) [56]
+-----------------------------------------------
+                0.00    0.00     100/100         __gnu_cxx::new_allocator<std::pair<int const, int> >::construct(std::pair<int const, int>*, std::pair<int const, int> const&) [28]
+[48]     0.0    0.00    0.00     100         operator new(unsigned int, void*) [48]
+-----------------------------------------------
+                0.00    0.00      83/83          std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_M_get_insert_hint_unique_pos(std::_Rb_tree_const_iterator<std::pair<int const, int> >, int const&) [47]
+[49]     0.0    0.00    0.00      83         std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_M_leftmost() [49]
+-----------------------------------------------
+                0.00    0.00      80/80          std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_M_get_insert_hint_unique_pos(std::_Rb_tree_const_iterator<std::pair<int const, int> >, int const&) [47]
+[50]     0.0    0.00    0.00      80         std::_Rb_tree_iterator<std::pair<int const, int> >::operator--() [50]
+-----------------------------------------------
+                0.00    0.00      36/36          std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_M_get_insert_hint_unique_pos(std::_Rb_tree_const_iterator<std::pair<int const, int> >, int const&) [47]
+[51]     0.0    0.00    0.00      36         std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_M_rightmost() [51]
+-----------------------------------------------
+                0.00    0.00      19/19          std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_M_get_insert_hint_unique_pos(std::_Rb_tree_const_iterator<std::pair<int const, int> >, int const&) [47]
+[52]     0.0    0.00    0.00      19         std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::size() const [52]
+-----------------------------------------------
+                                  78             dfs(int, int) [53]
+                0.00    0.00      10/10          _fu1___ZSt3cin [175]
+[53]     0.0    0.00    0.00      10+78      dfs(int, int) [53]
+                0.00    0.00     800/818         std::map<int, int, std::less<int>, std::allocator<std::pair<int const, int> > >::operator[](int const&) [19]
+                                  78             dfs(int, int) [53]
+-----------------------------------------------
+                0.00    0.00      10/10          _fu1___ZSt3cin [175]
+[54]     0.0    0.00    0.00      10         set_node(bool) [54]
+-----------------------------------------------
+                0.00    0.00      10/10          _fu1___ZSt3cin [175]
+[55]     0.0    0.00    0.00      10         __gcc_deregister_frame [55]
+-----------------------------------------------
+                0.00    0.00       1/1           std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_M_get_insert_hint_unique_pos(std::_Rb_tree_const_iterator<std::pair<int const, int> >, int const&) [47]
+[56]     0.0    0.00    0.00       1         std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_M_get_insert_unique_pos(int const&) [56]
+                0.00    0.00       1/819         std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_M_begin() [16]
+                0.00    0.00       1/981         std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_M_end() [14]
+                0.00    0.00       1/1838        std::_Rb_tree_iterator<std::pair<int const, int> >::_Rb_tree_iterator(std::_Rb_tree_node<std::pair<int const, int> >*) [10]
+                0.00    0.00       1/1           std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::begin() [57]
+                0.00    0.00       1/819         std::_Rb_tree_iterator<std::pair<int const, int> >::operator==(std::_Rb_tree_iterator<std::pair<int const, int> > const&) const [15]
+                0.00    0.00       1/100         std::pair<std::_Rb_tree_node_base*, std::_Rb_tree_node_base*>::pair(std::_Rb_tree_node_base* const&, std::_Rb_tree_node_base* const&) [41]
+-----------------------------------------------
+                0.00    0.00       1/1           std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_M_get_insert_unique_pos(int const&) [56]
+[57]     0.0    0.00    0.00       1         std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::begin() [57]
+                0.00    0.00       1/1838        std::_Rb_tree_iterator<std::pair<int const, int> >::_Rb_tree_iterator(std::_Rb_tree_node<std::pair<int const, int> >*) [10]
+-----------------------------------------------
+
+ This table describes the call tree of the program, and was sorted by
+ the total amount of time spent in each function and its children.
+
+ Each entry in this table consists of several lines.  The line with the
+ index number at the left hand margin lists the current function.
+ The lines above it list the functions that called this function,
+ and the lines below it list the functions this one called.
+ This line lists:
+     index	A unique number given to each element of the table.
+		Index numbers are sorted numerically.
+		The index number is printed next to every function name so
+		it is easier to look up where the function is in the table.
+
+     % time	This is the percentage of the `total' time that was spent
+		in this function and its children.  Note that due to
+		different viewpoints, functions excluded by options, etc,
+		these numbers will NOT add up to 100%.
+
+     self	This is the total amount of time spent in this function.
+
+     children	This is the total amount of time propagated into this
+		function by its children.
+
+     called	This is the number of times the function was called.
+		If the function called itself recursively, the number
+		only includes non-recursive calls, and is followed by
+		a `+' and the number of recursive calls.
+
+     name	The name of the current function.  The index number is
+		printed after it.  If the function is a member of a
+		cycle, the cycle number is printed between the
+		function's name and the index number.
+
+
+ For the function's parents, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the function into this parent.
+
+     children	This is the amount of time that was propagated from
+		the function's children into this parent.
+
+     called	This is the number of times this parent called the
+		function `/' the total number of times the function
+		was called.  Recursive calls to the function are not
+		included in the number after the `/'.
+
+     name	This is the name of the parent.  The parent's index
+		number is printed after it.  If the parent is a
+		member of a cycle, the cycle number is printed between
+		the name and the index number.
+
+ If the parents of the function cannot be determined, the word
+ `<spontaneous>' is printed in the `name' field, and all the other
+ fields are blank.
+
+ For the function's children, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the child into the function.
+
+     children	This is the amount of time that was propagated from the
+		child's children to the function.
+
+     called	This is the number of times the function called
+		this child `/' the total number of times the child
+		was called.  Recursive calls by the child are not
+		listed in the number after the `/'.
+
+     name	This is the name of the child.  The child's index
+		number is printed after it.  If the child is a
+		member of a cycle, the cycle number is printed
+		between the name and the index number.
+
+ If there are any cycles (circles) in the call graph, there is an
+ entry for the cycle-as-a-whole.  This entry shows who called the
+ cycle (as parents) and the members of the cycle (as children.)
+ The `+' recursive calls entry shows the number of function calls that
+ were internal to the cycle, and the calls entry for each member shows,
+ for that member, how many times it was called from other members of
+ the cycle.
+
+Copyright (C) 2012 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+Index by function name
+
+  [53] dfs(int, int)          [36] std::allocator<std::pair<int const, int> >::allocator<std::_Rb_tree_node<std::pair<int const, int> > >(std::allocator<std::_Rb_tree_node<std::pair<int const, int> > > const&) [45] std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_M_insert_unique_(std::_Rb_tree_const_iterator<std::pair<int const, int> >, std::pair<int const, int> const&)
+  [54] set_node(bool)         [37] std::allocator<std::pair<int const, int> >::~allocator() [46] std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_M_get_Node_allocator()
+  [27] __gnu_cxx::new_allocator<std::_Rb_tree_node<std::pair<int const, int> > >::allocate(unsigned int, void const*) [11] std::_Rb_tree_node<std::pair<int const, int> >::_M_valptr() [56] std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_M_get_insert_unique_pos(int const&)
+  [28] __gnu_cxx::new_allocator<std::pair<int const, int> >::construct(std::pair<int const, int>*, std::pair<int const, int> const&) [10] std::_Rb_tree_iterator<std::pair<int const, int> >::_Rb_tree_iterator(std::_Rb_tree_node<std::pair<int const, int> >*) [47] std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_M_get_insert_hint_unique_pos(std::_Rb_tree_const_iterator<std::pair<int const, int> >, int const&)
+  [29] __gnu_cxx::new_allocator<std::pair<int const, int> >::new_allocator() [50] std::_Rb_tree_iterator<std::pair<int const, int> >::operator--() [22] std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::end()
+  [30] __gnu_cxx::new_allocator<std::pair<int const, int> >::~new_allocator() [38] std::_Rb_tree_const_iterator<std::pair<int const, int> >::_Rb_tree_const_iterator(std::_Rb_tree_iterator<std::pair<int const, int> > const&) [57] std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::begin()
+  [31] __gnu_cxx::__alloc_traits<std::allocator<std::_Rb_tree_node<std::pair<int const, int> > > >::allocate(std::allocator<std::_Rb_tree_node<std::pair<int const, int> > >&, unsigned int) [17] std::map<int, int, std::less<int>, std::allocator<std::pair<int const, int> > >::lower_bound(int const&) [14] std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_M_end()
+  [32] __gnu_cxx::new_allocator<std::_Rb_tree_node<std::pair<int const, int> > >::max_size() const [18] std::map<int, int, std::less<int>, std::allocator<std::pair<int const, int> > >::end() [6] std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_S_key(std::_Rb_tree_node<std::pair<int const, int> > const*)
+   [3] std::_Select1st<std::pair<int const, int> >::operator()(std::pair<int const, int> const&) const [39] std::map<int, int, std::less<int>, std::allocator<std::pair<int const, int> > >::insert(std::_Rb_tree_iterator<std::pair<int const, int> >, std::pair<int const, int> const&) [25] std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_S_key(std::_Rb_tree_node_base const*)
+   [4] std::_Rb_tree_node<std::pair<int const, int> >::_M_valptr() const [19] std::map<int, int, std::less<int>, std::allocator<std::pair<int const, int> > >::operator[](int const&) [9] std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_S_left(std::_Rb_tree_node_base*)
+  [13] std::_Rb_tree_iterator<std::pair<int const, int> >::operator*() const [40] std::pair<int const, int>::pair(int const&, int const&) [16] std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_M_begin()
+  [15] std::_Rb_tree_iterator<std::pair<int const, int> >::operator==(std::_Rb_tree_iterator<std::pair<int const, int> > const&) const [41] std::pair<std::_Rb_tree_node_base*, std::_Rb_tree_node_base*>::pair(std::_Rb_tree_node_base* const&, std::_Rb_tree_node_base* const&) [8] std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_S_right(std::_Rb_tree_node_base*)
+  [33] std::_Rb_tree_const_iterator<std::pair<int const, int> >::_M_const_cast() const [42] std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_M_insert_(std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, std::pair<int const, int> const&) [7] std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_S_value(std::_Rb_tree_node<std::pair<int const, int> > const*)
+  [23] std::map<int, int, std::less<int>, std::allocator<std::pair<int const, int> > >::key_comp() const [43] std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_M_get_node() [26] std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_S_value(std::_Rb_tree_node_base const*)
+   [2] std::less<int>::operator()(int const&, int const&) const [49] std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_M_leftmost() [5] std::pair<int const, int> const* std::__addressof<std::pair<int const, int> const>(std::pair<int const, int> const&)
+  [34] std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::get_allocator() const [20] std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::lower_bound(int const&) [12] std::pair<int const, int>* std::__addressof<std::pair<int const, int> >(std::pair<int const, int>&)
+  [35] std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_M_get_Node_allocator() const [51] std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_M_rightmost() [48] operator new(unsigned int, void*)
+  [52] std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::size() const [44] std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_M_create_node(std::pair<int const, int> const&) [55] __gcc_deregister_frame
+  [24] std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::key_comp() const [21] std::_Rb_tree<int, std::pair<int const, int>, std::_Select1st<std::pair<int const, int> >, std::less<int>, std::allocator<std::pair<int const, int> > >::_M_lower_bound(std::_Rb_tree_node<std::pair<int const, int> >*, std::_Rb_tree_node<std::pair<int const, int> >*, int const&)
