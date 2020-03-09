@@ -27,7 +27,7 @@ struct cmp{
 priority_queue<node,vector<node>,cmp> que;
 
 void Dijkstra(int n, int beg){
-    //n寸结点的个数，beg为源点
+    //n为结点的个数，beg为源点
     for(int i=0; i<n; i++){
         lowcost[i]=INF; //进行初始化操作
         vis[i] = false;
