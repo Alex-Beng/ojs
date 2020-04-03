@@ -10,38 +10,57 @@
 // #include "MinHeap.h"
 // #include "HuffmanTree.h"
 // #include "Heap_v2.h"
-#include "LLBinaryTree.h"
-#include "LLBinarySearchTree.h"
-#include <cstring>
+// #include "LLBinaryTree.h"
+// #include "LLBinarySearchTree.h"
+// #include <cstring>
+#include "CrossSparseMat_v2.h"
 
 
 int main(int argc, char const *argv[]) {
-    LLBinarySearchTree<int> llbst;
-    string in_str;
-    std::getline(std::cin, in_str);
-    // cout<<in_str<<endl;
-    stringstream in_ss;
-    in_ss<<in_str;
+    int m, n;
+    int t1, t2;
+    cin>>m>>n>>t1>>t2;
+    CrossSparseMat<int> m1(m, n);
+    CrossSparseMat<int> m2(m, n);
 
-    TriLLNode<int>* yayaya = llbst.getHead();
-    llbst.inputPreOrd(in_ss, yayaya);
+    m1.input(t1);
+    m2.input(t2);
 
-    // LLBinarySearchTree<int> llbst2;
-    string in_str2;
-    std::getline(std::cin, in_str2);
-    // cout<<in_str<<endl;
-    stringstream in_ss2;
-    in_ss2<<in_str2;
+    // cout<<endl;
+    // m1.output();
+    // cout<<endl;
+    // m2.output();
+    // cout<<endl;
 
-    int t;
-    while (!in_ss2.eof()) {
-        in_ss2>>t;
-        if (t != -1) {
-            llbst.Insert(yayaya, t);
-        }        
-    }
-    llbst.outputMidOrd(yayaya);
-    cout<<endl;
+    m1.Add(m2);
+    m1.output();
+
+    // LLBinarySearchTree<int> llbst;
+    // string in_str;
+    // std::getline(std::cin, in_str);
+    // // cout<<in_str<<endl;
+    // stringstream in_ss;
+    // in_ss<<in_str;
+
+    // TriLLNode<int>* yayaya = llbst.getHead();
+    // llbst.inputPreOrd(in_ss, yayaya);
+
+    // // LLBinarySearchTree<int> llbst2;
+    // string in_str2;
+    // std::getline(std::cin, in_str2);
+    // // cout<<in_str<<endl;
+    // stringstream in_ss2;
+    // in_ss2<<in_str2;
+
+    // int t;
+    // while (!in_ss2.eof()) {
+    //     in_ss2>>t;
+    //     if (t != -1) {
+    //         llbst.Insert(yayaya, t);
+    //     }        
+    // }
+    // llbst.outputMidOrd(yayaya);
+    // cout<<endl;
 
     // llbst.outputMidOrd(yayaya);
 
