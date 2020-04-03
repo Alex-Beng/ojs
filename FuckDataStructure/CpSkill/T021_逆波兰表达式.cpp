@@ -99,7 +99,7 @@ int Stack<T>::Size()const {
 
 
 bool IsNum(char t) {
-    if (t == 'a' || t == 'b' || t == 'c') {
+    if ((t >= 'a' && t <= 'z') || (t >= 'A' && t <= 'Z')) {
         return true;
     }
     else {
@@ -116,19 +116,14 @@ bool IsOpt(char t) {
     }
 }
 
-short Priority[256];
+int judge(char a, char b) {
+    if((a == '*' && (b == '+' || b == '-')) || (a == '/' && (b == '+' || b == '-')))
+        return 1;
+    else
+        return 0;
+}
 
 int main(int argc, char const *argv[]) {
-    // cout<<(int)'+'<<' '<<(int)'0'<<endl;
-    if (IsNum('+')) {
-        cout<<"Ya"<<endl;
-    }
-    Priority['('] = 1;
-    Priority[')'] = 1;
-    Priority['+'] = 2;
-    Priority['-'] = 2;
-    Priority['*'] = 3;
-    Priority['/'] = 3;
 
     Stack<char> sk(233);
     char str[233];
@@ -142,13 +137,20 @@ int main(int argc, char const *argv[]) {
             output.push_back(str[i]);
         }
         else if (IsOpt(str[i])) {
-            if (sk.Empty() || Priority[sk.Top()] < Priority[str[i]] ) {
-                sk.Push(str[i]);
-            }
-            else if (!sk.Empty() && Priority[sk.Top()] >= Priority[str[i]]) {
-                // cout<<str[i-1]<<' '<<str[i]<<endl;
-                output.push_back(sk.Pop());
-                sk.Push(str[i]);
+            while (1) {            
+                char top = sk.Top();
+                if(judge(str[i], top) || sk.Empty() || top == '(') {
+                    sk.Push(str[i]);
+                    break;
+                }
+                else if(top == '+' || top == '-' || top == '*' || top == '/') {
+                    // printf("%c",top);
+                    output.push_back(top);
+                    sk.Pop();
+                }
+                else {
+                    break;
+                }
             }
         }
         else if (str[i] == '(') {
