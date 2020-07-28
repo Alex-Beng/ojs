@@ -1,32 +1,28 @@
-#include <stack>
+#include <vector>
+#include <iostream>
 using namespace std;
 
-class CQueue {
-public:
-    std::stack<int> a, b;
-    CQueue() {}
-    
-    void appendTail(int value) {
-        a.push(value);
-    }
-    
-    int deleteHead() {
-        if (a.empty() && b.empty()) return -1;
-        else if (b.empty() && !a.empty()) {
-            while(!a.empty()) {
-                b.push(a.top());
-                a.pop();
-            }
-        }
-        int t = b.top();
-        b.pop();
-        return t;
-    }
+struct TreeNode {
+    int val;
+    TreeNode *left;
+    TreeNode *right;
+    TreeNode(int x) : val(x), left(NULL), right(NULL) {}
 };
 
-/**
- * Your CQueue object will be instantiated and called as such:
- * CQueue* obj = new CQueue();
- * obj->appendTail(value);
- * int param_2 = obj->deleteHead();
- */
+class Solution {
+public:
+    TreeNode* buildTree(vector<int>& preorder, vector<int>& inorder) {
+        return build(preorder, inorder, 0, 0, preorder.size()-1);
+    }
+    TreeNode* build(vector<int>& preorder, vector<int>& inorder, int root, int start, int end) {
+        if (start > end) {
+            return NULL;
+        }
+        TreeNode* tree = new TreeNode(preorder[root]);
+        int i = start;
+        while (i<end && preorder[root]!=inorder[i]) i++;
+        tree->left = build(preorder, inorder, root+1, start, i-1);
+        tree->right = build(preorder, inorder, root+1+(i-start), i+1, end);
+        return tree;
+    }
+};
