@@ -28,7 +28,7 @@ int main(int argc, char const *argv[]) {
     int n;
     int ask_times;
     cin>>n;
-    int num[n];
+    int* num = new int[n];
     for (int i=0; i<n; i++) {
         cin>>num[i];
     }
