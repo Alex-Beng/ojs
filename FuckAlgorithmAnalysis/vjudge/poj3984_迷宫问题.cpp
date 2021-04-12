@@ -1,67 +1,106 @@
-#include <stack>
-#include <queue>
+#include <cstdio>
+
+#include <map>
 #include <iostream>
 using namespace std;
 
-int direction[4][2] = {{0,1}, {0,-1}, {-1,0}, {1,0}};
-int mist[23][33]; // 0 for road, 1 for wall
-stack<int> roads;
-stack<int> ans_roads;
-int ans = 0;
-int t_sum_step;
+int maze[5][5];
 
-void input_data () {
-    for (int i=0; i<5; i++) {
-        for (int j=0; j<5; j++) {
-            cin>>mist[i][j];
-        }
-    }
-}
+int diffs[4][2] = {
+                    {0, 1},
+                    {0, -1},
+                    {1, 0},
+                    {-1, 0}
+                  };
 
-bool go_able(int row, int col) {
-    if (mist[row][col] == 1) {
-        return false;
+struct status {
+    int row;
+    int col;
+    int prev;
+    int op;
+    status() {
+        row = col = prev = op = -1;
+    }    
+    bool operator<(const status& that) const {
+        int this_key = row*10 + col;
+        int that_key = that.row*10 + that.col;
+        return this_key < that_key;
     }
-    if (row < 0 || row > 4 || col < 0 || col > 4) {
-        return false;
+    void operator=(const status& that) {
+        row = that.row;
+        col = that.col;
+        prev = that.prev;
+        op = that.op;
     }
-    return true;
-}
+};
 
-void dfs(int row, int col, int flag) {
-    cout<<row<<' '<<col<<' '<<flag<<endl;
-    if (row == 4 && col == 4) {
-        if (t_sum_step < ans) {
-            ans = t_sum_step;
-            ans_roads = roads;
-        }
+void out_res(status* st_qrq, int idx) {
+    if (idx == -1) {
+        // printf("(%d, %d)\n", st_qrq[idx].row, st_qrq[idx].col);
+        ;
     }
     else {
+        out_res(st_qrq, st_qrq[idx].prev);
+        printf("(%d, %d)\n", st_qrq[idx].row, st_qrq[idx].col);
+    }
+}
+
+void bfs() {
+    status st_qrq[233];
+    int qrq_head_idx = 0;
+    int qrq_tail_idx = 0;
+
+    std::map<status, int> been;
+
+    status t_s;
+    t_s.row = 0;
+    t_s.col = 0;
+    st_qrq[qrq_tail_idx++] = t_s;
+    been[t_s] = 1;
+
+    int t_idx = -1;
+    while (qrq_head_idx != qrq_tail_idx) {
+        t_s = st_qrq[qrq_head_idx];
+        t_idx = qrq_head_idx;
+        qrq_head_idx++;
+
+        if (t_s.row == 4 && t_s.col == 4) {
+            // out res
+            // cout<<t_idx<<endl;
+            out_res(st_qrq, t_idx);
+        }
+
+        // 上下左右
         for (int i=0; i<4; i++) {
-            int t_row = row + direction[i][0];
-            int t_col = col + direction[i][1];
-            
-            // cout<<t_row<<t_col<<endl;
-            if (go_able(t_row, t_col)) {
-                // cout<<'w'<<t_row<<t_col<<endl;
-                t_sum_step++;
-                roads.push(t_row*5 + t_col);
-                dfs(t_row, t_col, i);
-                roads.pop();
-                t_sum_step--;
-            }
+            int dr = diffs[i][0];
+            int dc = diffs[i][1];
+
+            t_s.row += dr;
+            t_s.col += dc;
+
+            if (t_s.row < 0 || t_s.row > 4 
+             || t_s.col < 0 || t_s.col > 4) continue;
+            if (been[t_s]) continue;//!
+            if (maze[t_s.row][t_s.col]) continue; //!
+
+            t_s.prev = t_idx;
+            t_s.op = i;
+            st_qrq[qrq_tail_idx++] = t_s;
+            been[t_s] = 1;//!
+
+            t_s.row -= dr;
+            t_s.col -= dc;
         }
     }
+    
 }
 
 int main(int argc, char const *argv[]) {
-    input_data();
-
-    ans_roads.push(0);
-    dfs(0, 0, -1);
-    for (size_t i=0; i<ans_roads.size(); i++) {
-        cout<<ans_roads.top();
-        ans_roads.pop();
+    for (int i=0; i<5; i++) {
+        for (int j=0; j<5; j++) {
+            cin>>maze[i][j];
+        }
     }
+    bfs();
     return 0;
 }
