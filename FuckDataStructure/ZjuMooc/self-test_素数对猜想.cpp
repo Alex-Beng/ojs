@@ -1,3 +1,8 @@
+/*
+好家伙，老英文文盲了
+prime是素数，nmd这样搞is_prime数组里值为0的是素数，1是合数
+妈的，绝了.jpg
+*/
 #include <vector>
 #include <cstring>
 #include <iostream>
