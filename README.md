@@ -1,6 +1,6 @@
 # Alex Beng's ojs
 
-AB 刷过的oj题，先前是按课程/用途分，2021.04开始主要转向自我提升，故主要是刷vj，代码&题解均放 FuckAlgorithmAnalysis/vjudge/。
+AB 刷过的oj题，先前是按课程/用途分，2021.04开始转向自我提升，故主要是刷vj，代码&题解均放 FuckAlgorithmAnalysis/vjudge/。
 
 基本覆盖NWPU 10院的《算法设计与分析》、《数据结构》课程涉及的oj题，无题解（反正基本是裸题），基本保证OOP风格及可阅读性。
 
