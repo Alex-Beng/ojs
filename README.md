@@ -9,12 +9,12 @@ AB 刷过的oj题。
 |文件夹|用途|
 |-|-|
 |doc|上古文档，现在题解直接跟代码放一块|
-|FuckAlgorithmAnalysis| 各个oj上刷的算法题，注意noj 指的是[noj.cn](noj.cn)而不是[cpskill](noj.nwpu.edu.cn)|
+|FuckAlgorithmAnalysis| 各个oj上刷的算法题，注意noj 指的是 [noj.cn](http://noj.cn/)而不是[cpskill](http://noj.nwpu.edu.cn)|
 |FuckComputerTest|各个厂子的机试题|
-|FuckCpp|[cpskill](noj.nwpu.edu.cn)上的C++程序设计（虽然只有一题）|
-|FuckDataStructure| [CppImplements](./FuckDataStructure\CppImplements)子文件夹是各种数据结构的CPP实现，基本保证OOP风格及可阅读性；[CpSkill](./FuckDataStructure\CpSkill)子文件夹是[cpskill](noj.nwpu.edu.cn)上的数据结构；[Noj](./FuckDataStructure\Noj)子文件夹是[noj.cn](noj.cn)上数据结构相关的题；[TheoryCpskill](./FuckDataStructure\TheoryCpskill)子文件夹是[cpskill](noj.nwpu.edu.cn)上的数据结构(理论课)的题；[ZjuMooc](./FuckDataStructure\ZjuMooc)子文件夹是刷zju慕课时pta的题|
+|FuckCpp|[cpskill](http://noj.nwpu.edu.cn)上的C++程序设计（虽然只有一题）|
+|FuckDataStructure| [CppImplements](/FuckDataStructure\CppImplements)子文件夹是各种数据结构的CPP实现，基本保证OOP风格及可阅读性；[CpSkill](/FuckDataStructure\CpSkill)子文件夹是[cpskill](http://noj.nwpu.edu.cn)上的数据结构；[Noj](/FuckDataStructure\Noj)子文件夹是[noj.cn](noj.cn)上数据结构相关的题；[TheoryCpskill](/FuckDataStructure\TheoryCpskill)子文件夹是[cpskill](http://noj.nwpu.edu.cn)上的数据结构(理论课)的题；[ZjuMooc](/FuckDataStructure\ZjuMooc)子文件夹是刷zju慕课时pta的题|
 |FuckLeetcode|刷leetcode的题|
-|FuckPointingOffer|leetcode上剑指offer的题（历史遗留问题没放到[FuckLeetcode](./FuckLeetcode)）|
+|FuckPointingOffer|leetcode上剑指offer的题（历史遗留问题没放到[FuckLeetcode](/FuckLeetcode)）|
 
 # 题解书写原则
 
