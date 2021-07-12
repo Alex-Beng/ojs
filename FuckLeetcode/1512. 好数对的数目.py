@@ -1,8 +1,11 @@
 class Solution:
     def numIdenticalPairs(self, nums: List[int]) -> int:
-        nums.sort()
+        num2times = dict()
         ans = 0
-        for i in range(1, len(nums)):
-            if nums[i-1] == nums[i]:
-                ans += 1
+        for n in nums:
+            if n in num2times:
+                ans += num2times[n]
+                num2times[n] += 1
+            else:
+                num2times[n] = 1
         return ans
