@@ -13,6 +13,8 @@ class Codec:
     def decode(self, shortUrl: str) -> str:
         """Decodes a shortened URL to its original URL.
         """
+        key = int(shortUrl.split('/')[-1])
+        return self.map[key]
         
 
 # Your Codec object will be instantiated and called as such:
