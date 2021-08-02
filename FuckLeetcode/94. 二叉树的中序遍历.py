@@ -13,3 +13,5 @@ class Solution:
             in_trav(node.left)
             ans.append(node.val)
             in_trav(node.right)
+        in_trav(root)
+        return ans
