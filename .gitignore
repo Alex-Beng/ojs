@@ -12,3 +12,4 @@ Questions
 *.jpeg
 *.obj
 out.log
+*.pyc
