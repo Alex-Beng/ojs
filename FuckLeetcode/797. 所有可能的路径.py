@@ -6,7 +6,7 @@ class Solution:
 
         def dfs(curr_node, curr_path):
             if curr_node == n-1:
-                ans.append(deepcopy(curr_path))
+                ans.append(tuple(curr_path))
                 return 
             
             for to in graph[curr_node]:
@@ -15,7 +15,7 @@ class Solution:
                 del curr_path[-1]
         dfs(0, [0])
         # print(ans)
-        return ans
+        return [list(i) for i in ans]
 s = Solution()
 s.allPathsSourceTarget(
     #  [[1,2],[3],[3],[]]
