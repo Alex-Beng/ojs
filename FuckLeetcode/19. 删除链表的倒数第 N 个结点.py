@@ -1,15 +1,5 @@
 # Definition for singly-linked list.
-class ListNode:
-    def __init__(self, val=0, next=None):
-        self.val = val
-        self.next = next
-
-def print_link(t_ptr):
-    while t_ptr is not None:
-        print(t_ptr.val, end=' ')
-        t_ptr = t_ptr.next
-    print()
-
+from util import *
 
 class Solution:
     def removeNthFromEnd(self, head: ListNode, n: int) -> ListNode:
