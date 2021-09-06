@@ -11,8 +11,6 @@ class Solution:
         while fast_ptr is not None and fast_ptr.next is not None:
             fast_ptr = fast_ptr.next
             slow_ptr = slow_ptr.next
-        print_link(fast_ptr)
-        print_link(slow_ptr)
         if fast_ptr is None:# to del head
             t = head
             head = head.next
