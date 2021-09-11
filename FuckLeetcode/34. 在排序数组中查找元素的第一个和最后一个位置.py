@@ -20,7 +20,7 @@ class Solution:
             elif  nums[m]<=target:
                 L = m+1
 
-        print(L, R)
+        # print(L, R)
         if valid(L) and nums[L] == target:
             Rb = L
         if valid(R) and nums[R] == target:
@@ -33,7 +33,7 @@ class Solution:
                 R = m-1
             elif  nums[m]<target:
                 L = m+1
-        print(L, R)
+        # print(L, R)
         if valid(L) and nums[L] == target:
             Lb = L
         if valid(R) and nums[R] == target:
