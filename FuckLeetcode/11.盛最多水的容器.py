@@ -1,3 +1,10 @@
+#
+# @lc app=leetcode.cn id=11 lang=python3
+#
+# [11] 盛最多水的容器
+#
+
+# @lc code=start
 class Solution:
     def maxArea(self, height: [int]) -> int:
         n = len(height)
@@ -16,10 +23,5 @@ class Solution:
             else:
                 r -= 1
         return ans
-s = Solution()
-print(s.maxArea(
-    # [1,8,6,2,5,4,8,3,7]
-    #  [4,3,2,1,4]
-    # [1,1]
-     [1,2,1]
-))
+# @lc code=end
+
