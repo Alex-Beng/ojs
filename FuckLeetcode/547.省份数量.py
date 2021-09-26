@@ -22,7 +22,7 @@ class Solution:
             for j,c in enumerate(con):
                 if c:
                     merge(i, j)
-        print(fa)
+        # print(fa)
         ans = set()
         for f in fa:
             ans.add(find(f))
