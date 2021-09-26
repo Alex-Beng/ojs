@@ -9,19 +9,18 @@
 using namespace std;
 
 // @lc code=start
-#include <set>
-#include <map>
+#include <unordered_map>
 
 class Solution {
 public:
 
-    std::map<string, int> sig = {
+    std::unordered_map<string, int> sig = {
         {"1", 1},{"2", 1},{"3", 1},{"4", 1},{"5", 1},{"6", 1},{"7", 1},{"8", 1},{"9", 1},{"10", 1},{"11", 1},{"12", 1},{"13", 1},{"14", 1},{"15", 1},{"16", 1},{"17", 1},{"18", 1},{"19", 1},{"20", 1},{"21", 1},{"22", 1},{"23", 1},{"24", 1},{"25", 1},{"26", 1},
     };
-    std::map<char, int> fir2num = {
+    std::unordered_map<char, int> fir2num = {
         {'0', 0},{'1', 9},{'2', 6},{'3', 0},{'4', 0},{'5', 0},{'6', 0},{'7', 0},{'8', 0},{'9', 0}
     };
-    std::map<char, int> sec2num = {
+    std::unordered_map<char, int> sec2num = {
         {'0', 2},{'1', 2},{'2', 2},{'3', 2},{'4', 2},{'5', 2},{'6', 2},{'7', 1},{'8', 1},{'9', 1},
     };
     
