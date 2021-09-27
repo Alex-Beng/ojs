@@ -1,4 +1,10 @@
-from copy import deepcopy
+#
+# @lc app=leetcode.cn id=797 lang=python3
+#
+# [797] 所有可能的路径
+#
+
+# @lc code=start
 class Solution:
     def allPathsSourceTarget(self, graph: [[int]]) -> [[int]]:
         n = len(graph)
@@ -14,10 +20,6 @@ class Solution:
                 dfs(to, curr_path)
                 del curr_path[-1]
         dfs(0, [0])
-        # print(ans)
         return [list(i) for i in ans]
-s = Solution()
-s.allPathsSourceTarget(
-    #  [[1,2],[3],[3],[]]
-    [[4,3,1],[3,2,4],[3],[4],[]]
-)
+# @lc code=end
+
