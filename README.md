@@ -1,5 +1,12 @@
 # Alex Beng's ojs
 
+
+|Code Quality|
+----
+|[![CodeFactor](https://www.codefactor.io/repository/github/alex-beng/ojs/badge)](https://www.codefactor.io/repository/github/alex-beng/ojs)|
+
+
+
 AB 刷过的oj题。
 
 基本覆盖NWPU 10院的《算法设计与分析》、《数据结构》课程涉及的oj题，无题解（反正基本是裸题），保证一定的可阅读性。
