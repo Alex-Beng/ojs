@@ -1,8 +1,7 @@
 # Alex Beng's ojs
 
----
 |Code Quality|
-----
+|-|
 |[![CodeFactor](https://www.codefactor.io/repository/github/alex-beng/ojs/badge)](https://www.codefactor.io/repository/github/alex-beng/ojs)|
 
 
