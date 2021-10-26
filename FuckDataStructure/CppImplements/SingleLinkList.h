@@ -176,11 +176,8 @@ bool SingleLinkList<T>::IsEmpty()const {
     return (Len == 0);
 }
 
-
 template<class T>
-void SingleLinkList<T>::Sort() {
-
-}
+void SingleLinkList<T>::Sort() {}
 
 template<class T>
 void SingleLinkList<T>::input() {
@@ -215,7 +212,6 @@ T* SingleLinkList<T>::Locate(int i)const {
         else {
             t_ptr = t_ptr->next;
         }
-        
     }
     return &(t_ptr->data);
 }
