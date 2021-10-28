@@ -5,8 +5,6 @@
 #
 
 # @lc code=start
-
-
 def print_link(t_ptr, cap):
     for i in range(cap):
         print(f'{t_ptr.pre.val}->{t_ptr.val}->{t_ptr.nex.val}', end=' ')
@@ -16,8 +14,6 @@ def print_link(t_ptr, cap):
         print(f'{t_ptr.pre.val}->{t_ptr.val}->{t_ptr.nex.val}', end=' ')
         t_ptr = t_ptr.nex
     print()
-
-
 
 class ListNode:
     def __init__(self, val, pre=None, nex=None):
@@ -91,29 +87,7 @@ class LRUCache:
             node = self.key2node[key]
             self.update_node(node)
 
-
 # @lc code=end
-
-
 ops = ["LRUCache","put","put","get","put","get","put","get","get","get"]
 args = [[2],[1,1],[2,2],[1],[3,3],[2],[4,4],[1],[3],[4]]
-
-ops = ["LRUCache","get","put","get","put","put","get","get"]
-args = [[2],[2],[2,6],[1],[1,5],[1,2],[1],[2]]
-
-for i in range(len(ops)):
-    op = ops[i]
-    arg = args[i]
-    print(op, arg)
-    if op == "put":
-        r = t.put(arg[0], arg[1])
-    elif op == "get":
-        r = t.get(arg[0])
-    elif op == "LRUCache":
-        t = LRUCache(arg[0])
-        r = ''
-    print(t.key2val)
-    print_link(t.keys.head, t.cap)
-    print(r)
-    print()
-
+exps = [None, None, None, 1, None, -1, None, -1, 3, 4]

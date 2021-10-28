@@ -53,24 +53,4 @@ class Trie:
 
 ops = ["Trie","insert","search","search","startsWith","insert","search"]
 args = [[],["apple"],["apple"],["app"],["app"],["app"],["app"]]
-
-ops = ["Trie","insert","search","search","startsWith","startsWith","insert","search","startsWith","insert","search","startsWith"]
-args = [[],["ab"],["abc"],["ab"],["abc"],["ab"],["ab"],["abc"],["abc"],["abc"],["abc"],["abc"]]
-
-
-for i in range(len(ops)):
-    op = ops[i]
-    arg = args[i]
-    print(op, arg)
-    if op == "Trie":
-        t = Trie()
-        r = ''
-    elif op == "insert":
-        r = t.insert(arg[0])
-    elif op == "search":
-        r = t.search(arg[0])
-    elif op == 'startsWith':
-        r = t.startsWith(arg[0])
-    print(r)
-    print()
-
+exps = [None, None, True, False, True, None, True]

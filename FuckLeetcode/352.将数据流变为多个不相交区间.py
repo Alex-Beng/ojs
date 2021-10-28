@@ -34,13 +34,6 @@ class SummaryRanges:
     def getIntervals(self) -> [[int]]:
         return self.rgs
 
-
 ops = ["SummaryRanges", "addNum", "getIntervals", "addNum", "getIntervals", "addNum", "getIntervals", "addNum", "getIntervals", "addNum", "getIntervals"]
-ps = [[], [1], [], [3], [], [7], [], [2], [], [6], []]
-
-s = SummaryRanges()
-for op, p in zip(ops, ps):
-    if op == 'addNum':
-        s.addNum(p[0])
-    elif op == 'getIntervals':
-        print(s.getIntervals())
+args = [[], [1], [], [3], [], [7], [], [2], [], [6], []]
+exps = [None, None, [[1, 1]], None, [[1, 1], [3, 3]], None, [[1, 1], [3, 3], [7, 7]], None, [[1, 3], [7, 7]], None, [[1, 3], [6, 7]]]

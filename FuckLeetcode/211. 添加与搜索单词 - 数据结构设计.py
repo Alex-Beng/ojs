@@ -50,34 +50,6 @@ class WordDictionary:
                 return False
         return search_wd(self.root, word)
 
-# Your WordDictionary object will be instantiated and called as such:
-# obj = WordDictionary()
-# print(obj.addWord("bad") )
-# print(obj.addWord("dad") )
-# print(obj.addWord("mad") )
-# print(obj.search("pad")  )# return False
-# print(obj.search("bad")  )# return True
-# print(obj.search(".ad")  )# return True
-# print(obj.search("b..")  )# return True
-
-# obj.addWord()
-# param_2 = obj.search(word)
-
 ops = ["WordDictionary","addWord","addWord","addWord","addWord","search","search","addWord","search","search","search","search","search","search"]
-param = [[],["at"],["and"],["an"],["add"],["a"],[".at"],["bat"],[".at"],["an."],["a.d."],["b."],["a.d"],["."]]
-
-wanted = [None,None,None,None,None,False,False,None,True,True,False,False,True,False]
-
-ya = None
-for idx,op in enumerate(ops):
-    if op == "WordDictionary":
-        ret = ya = WordDictionary()
-    if op == "addWord":
-        print(f'add {param[idx][0]}')
-        ret = ya.addWord(param[idx][0])
-    if op == "search":
-        print(f'search {param[idx][0]}')
-        ret = ya.search(param[idx][0])
-    # print(ya.root)
-    if ret != wanted[idx]:
-        print(f"草泥马{ret} from {op} {param[idx]}")
+args = [[],["at"],["and"],["an"],["add"],["a"],[".at"],["bat"],[".at"],["an."],["a.d."],["b."],["a.d"],["."]]
+exps = [None,None,None,None,None,False,False,None,True,True,False,False,True,False]
