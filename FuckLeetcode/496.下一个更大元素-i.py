@@ -23,6 +23,26 @@ class Solution:
                     break
                 idx += 1
         return ans
+class Solution:
+    def nextGreaterElement(self, nums1: List[int], nums2: List[int]) -> List[int]:
+        n = len(nums2)
+        next_big = [-1]*n
+        sk = []
+        num2idx = dict()
+        for i,n in enumerate(nums2):
+            num2idx[n] = i
+            while len(sk) and n > nums2[sk[-1]]:
+                next_big[sk[-1]] = i
+                del sk[-1]
+            sk.append(i)
+        ans = []
+        for i,n in enumerate(nums1):
+            b_idx = next_big[num2idx[n]]
+            if b_idx == -1:
+                ans.append(-1)
+            else:
+                ans.append(nums2[b_idx])
+        return ans
 
 # @lc code=end
 
