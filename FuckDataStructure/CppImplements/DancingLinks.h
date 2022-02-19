@@ -95,7 +95,7 @@ void DancingLinks::remove(int c) {
 void DancingLinks::resume(int c) {
     // 注意得完全反过来
     for (int i=U[c]; i!=c; i=U[i]) {
-        for (int j=L[i]; j!=i; j=L[i]) {
+        for (int j=L[i]; j!=i; j=L[j]) {
             U[D[j]] = j;
             D[U[j]] = j;
             S[this->col[j]] += 1;
