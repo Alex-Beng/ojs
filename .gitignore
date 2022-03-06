@@ -13,3 +13,4 @@ Questions
 *.obj
 out.log
 *.pyc
+*.ilk
