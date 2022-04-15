@@ -14,3 +14,4 @@ Questions
 out.log
 *.pyc
 *.ilk
+*.pdb
