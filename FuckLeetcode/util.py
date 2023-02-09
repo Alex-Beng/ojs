@@ -59,3 +59,11 @@ def print_tree(root):
         print('    '*depth, root.val)
         print_tree_helper(root.left, depth+1)
     print_tree_helper(root, 0)
+
+# DESIGN
+def test_design(ops, args, cls):
+    t = cls(*args[0])
+    n = len(ops)
+    for op,arg in zip(ops[1:], args[1:]):
+        res = getattr(t, op)(*arg)
+        print(res, end=" ")
