@@ -1,3 +1,6 @@
+*.id[0-2]
+*.til
+*.nam
 .vscode
 *.exe
 *.o
