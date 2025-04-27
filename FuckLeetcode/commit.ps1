@@ -4,5 +4,6 @@ param (
 )
 
 git add $filePath
-$commitMessage = "leetcode $($filePath -replace '\..*$', '') $message"
-git commit -m $commitMessage
+$baseName = [System.IO.Path]::GetFileNameWithoutExtension($filePath)
+$commitMessage = "leetcode $baseName $message"
+git commit -m "$commitMessage"
