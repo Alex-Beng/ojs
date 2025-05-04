@@ -5,6 +5,7 @@ import os
 import importlib
 from IPython import embed
 import inspect
+import traceback
 
 # author: 4o
 def import_module_from_path(relative_path, module_name):
@@ -19,6 +20,31 @@ def import_module_from_path(relative_path, module_name):
     sys.modules[module_name] = module
     spec.loader.exec_module(module)
     return module
+
+
+# author: 4o
+def global_exception_hook(exc_type, exc_value, exc_traceback):
+    # 打印异常信息
+    print("Unhandled exception caught!")
+    print("Exception type:", exc_type)
+    print("Exception value:", exc_value)
+
+    # 打印堆栈信息
+    traceback.print_tb(exc_traceback)
+
+    # 遍历堆栈帧
+    tb = exc_traceback
+    while tb is not None:
+        frame = tb.tb_frame
+        local_vars = frame.f_locals
+        print(f"\nIn file: {frame.f_code.co_filename}, line: {tb.tb_lineno}, in {frame.f_code.co_name}")
+        print("Local variables:")
+        for var_name, var_value in local_vars.items():
+            print(f"    {var_name} = {var_value}")
+        tb = tb.tb_next
+
+# 设置全局异常钩子
+sys.excepthook = global_exception_hook
 
 
 if __name__ == '__main__':
