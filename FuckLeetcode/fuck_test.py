@@ -6,6 +6,7 @@ import importlib
 from IPython import embed
 import inspect
 import traceback
+import time
 
 # author: 4o
 def import_module_from_path(relative_path, module_name):
@@ -74,8 +75,10 @@ if __name__ == '__main__':
         exit(-4)
     
     for i in module.INPUT:
+        timeBeg = time.time()
         r = func[1](*i)
-        print(f"{func[0]}{i} ==> {r}")
+        timeEnd = time.time()
+        print(f"{func[0]}{i} ==> {r}, cost: {timeEnd-timeBeg:.4f}")
     
     # embed()
     pass
