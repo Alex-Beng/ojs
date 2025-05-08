@@ -65,7 +65,7 @@ if __name__ == '__main__':
         print(f"Specify function name plz. in {funcs}")
         exit(-2)
     print(funcs)
-    func = funcs[0] if len(funcs) == 1 else getattr(sIns, sys.argv[2], None)
+    func = funcs[0] if len(funcs) == 1 else [sys.argv[2], getattr(sIns, sys.argv[2], None)]
     if not func:
         print(f"func name not in {funcs}")
         exit(-3)
