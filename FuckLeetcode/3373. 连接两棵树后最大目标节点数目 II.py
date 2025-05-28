@@ -30,12 +30,14 @@ class Solution:
         dfs(0, -1, 0, aj1, node2odd1, odd2num1)
         dfs(0, -1, 0, aj2, node2odd2, odd2num2)
 
+        p2 = max(odd2num2)
+        return [odd2num1[node2odd1[i]] + p2 for i in range(N)]
         res = []
         for i in range(N):
             p1 = odd2num1[node2odd1[i]]
             # p2 = odd2num2[1-node2odd1[i]]
             p2 = max(odd2num2)
-            print(i, p1, p2)
+            # print(i, p1, p2)
             res.append(p1+p2)
         return res
         pass
