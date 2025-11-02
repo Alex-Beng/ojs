@@ -1,8 +1,11 @@
-# LINK LIST
+# region LINK LIST
 class ListNode:
     def __init__(self, val=0, next=None):
         self.val = val
         self.next = next
+    def __repr__(self):
+        return f'LINK[{print_link(self, False)}]'
+
 def make_link(nums):
     if len(nums)==0:
         return None
@@ -14,13 +17,17 @@ def make_link(nums):
     return ya[0]
 
 
-def print_link(t_ptr):
+def print_link(t_ptr, p=True):
+    res = []
     while t_ptr is not None:
-        print(t_ptr.val, end=' ')
+        res.append(str(t_ptr.val))
         t_ptr = t_ptr.next
-    print()
+    res_str = ' '.join(res)
+    if p:
+        print(res_str)
+    return res_str
 
-# TREE
+# region TREE
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):
         self.val = val
@@ -60,7 +67,7 @@ def print_tree(root):
         print_tree_helper(root.left, depth+1)
     print_tree_helper(root, 0)
 
-# DESIGN
+# region DESIGN
 def test_design(ops, args, cls):
     t = cls(*args[0])
     n = len(ops)

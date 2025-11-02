@@ -38,7 +38,9 @@ def global_exception_hook(exc_type, exc_value, exc_traceback):
         print(f"\nIn file: {frame.f_code.co_filename}, line: {tb.tb_lineno}, in {frame.f_code.co_name}")
         print("Local variables:")
         for var_name, var_value in local_vars.items():
-            print(f"    {var_name} = {var_value}")
+            p_value = str(var_value)[:100]
+            if var_name[:2] != '__':
+                print(f"    |{var_name} = {p_value}|")
         tb = tb.tb_next
     print("Unhandled exception caught!")
     print("Exception type:", exc_type)
@@ -75,10 +77,11 @@ if __name__ == '__main__':
         exit(-4)
     
     for i in module.INPUT:
+        si = str(i)
         timeBeg = time.time()
         r = func[1](*i)
         timeEnd = time.time()
-        print(f"{func[0]}{i} ==> {r}, cost: {timeEnd-timeBeg:.4f}")
+        print(f"{func[0]}{si} ==> {r}, cost: {timeEnd-timeBeg:.4f}")
     
     # embed()
     pass
