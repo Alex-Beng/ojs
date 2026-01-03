@@ -18,3 +18,4 @@ out.log
 *.pyc
 *.ilk
 *.pdb
+in.txt
